@@ -13,7 +13,7 @@ Grazie ai puntatori è possibile manipolare direttamente il contenuto delle vari
 ### **Esempio Visivo**
 Nell'immagine seguente puoi vedere come funziona un puntatore:
 
-![Esempio Puntatore](puntatori.html)
+![Esempio Puntatore](puntatore.html)
 
 - `x` è una variabile con un valore (`42`) e un indirizzo (`0x7ffeab00`).
 - `ptr` è il puntatore che **contiene l'indirizzo di x** (`0x7ffeab00`).
