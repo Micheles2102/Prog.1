@@ -88,7 +88,7 @@ int risultato = somma(3, 5);
     ```c
     void incrementa(int x) { x = x + 1; }
     ```
-    (funzione.png)
+    ![Esempio passaggio mediante indirizzo vs valore](funzione.png)
     
 - **Per Indirizzo**: viene passato l'indirizzo della variabile, permettendo di modificarne il valore originale.
   - Esempio:
