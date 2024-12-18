@@ -6,7 +6,7 @@ int main(int argc, char* argv[]) {
 
     // 1) Inizializzazione di un puntatore
     // Tipologia dell'elemento che si sta puntando, deferenziatore (*) e nome puntatore = indirizzo di memoria della variabile
-    int* ptr = &x;
+    int* ptr = &x; // all'inizio dobbiamo dire che il valore che ptr contiene deve essere l'indirizzo di x successivamente con *ptr andremmo a prendere IL CONTENUTO DI QUEL'INDIRIZZO
     printf("Il valore puntato da ptr è: %d\n", *ptr);
 
     // 2) Modifica del valore dell'elemento puntato
