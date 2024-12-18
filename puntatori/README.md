@@ -11,14 +11,29 @@ Un **puntatore** è una variabile che contiene l'indirizzo di memoria di un'altr
 Grazie ai puntatori è possibile manipolare direttamente il contenuto delle variabili in memoria.
 
 ### **Esempio Visivo**
-Nell'immagine seguente puoi vedere come funziona un puntatore:
+
+Nell'immagine seguente puoi vedere come funziona un puntatore con l'aggiunta di un secondo puntatore chiamato `ptrNull`:
 
 ![Esempio Puntatore](puntatore.png)
 
-
 - `x` è una variabile con un valore (`42`) e un indirizzo (`0x7ffeab00`).
-- `ptr` è il puntatore che **contiene l'indirizzo di x** (`0x7ffeab00`).
+- `ptr` è il puntatore che **contiene l'indirizzo di `x`** (`0x7ffeab00`).
 - Utilizzando `*ptr`, possiamo accedere al valore contenuto in `x`.
+- `ptrNull` è un altro puntatore che **contiene un indirizzo di memoria diverso** da quello di `x`. In questo caso, potrebbe essere un indirizzo "null" (ad esempio `NULL` o `0x0`).
+  - **Importante:** Un puntatore nullo (come `ptrNull`) non punta a nessun indirizzo valido di memoria, e tentare di dereferenziare un puntatore nullo (`*ptrNull`) provoca un errore di esecuzione (segmentation fault).
+
+### Comportamento di un Puntatore Nullo
+
+- **`ptr`**: punta a un indirizzo valido, che contiene il valore di `x`.
+- **`ptrNull`**: è un puntatore nullo, che non punta a nessuna variabile valida in memoria.
+  
+Se tentiamo di dereferenziare `ptrNull` come nel caso di `*ptrNull`, otterremmo un errore, perché il puntatore non è associato a nessuna variabile valida.
+
+### **Riepilogo**
+
+- **Puntatore valido (`ptr`)**: può essere dereferenziato per ottenere il valore della variabile a cui punta.
+- **Puntatore nullo (`ptrNull`)**: non può essere dereferenziato in modo sicuro e genera un errore in fase di esecuzione.
+
 
 ---
 
