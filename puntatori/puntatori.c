@@ -27,6 +27,23 @@ int main(int argc, char* argv[]) {
     *ptr = 7;  // Modifica il valore di y attraverso ptr
     printf("Dopo modifica tramite ptr, il valore di y è: %d\n", y);
 
+    // 4.1) Puntatore nullo (NULL)
+    // Un puntatore nullo è un puntatore che non punta a nessuna locazione di memoria valida.
+    // In altre parole, un puntatore nullo è un puntatore che contiene l'indirizzo speciale 'NULL'.Punta a niente che è stato inizializzato.
+    // È importante utilizzare i puntatori nulli per evitare errori di memoria e per indicare che un puntatore non è ancora stato inizializzato.
+
+    int* ptrNull = NULL; // Puntatore nullo, non punta a nessuna variabile
+    if (ptrNull == NULL) {
+        printf("ptrNull è un puntatore nullo.\n");  // Mostra che ptrNull è nullo
+    }
+
+    // ATTENZIONE IMPORTANTE:
+    //Non tentare mai di dereferenziare un puntatore nullo.
+    // Se proviamo a dereferenziare ptrNull, il programma darà un errore (segmentation fault).
+    // *ptrNull = 10; // ERRORE: Non è possibile dereferenziare un puntatore nullo! Bisogna prima fallo referenziare a qualcosa.
+    // Attenzione quando si ha un puntatore costante ad un NULL (Quindi non possiamo modifica a ciò che il puntatore punta come vedremo in seguito)
+
+
     // 5) Puntatore a costante
     // Puntatore a costante: il valore puntato non può essere modificato
     const int* p = &x;
