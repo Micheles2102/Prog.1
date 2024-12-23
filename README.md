@@ -23,30 +23,30 @@ La repository è organizzata per argomenti, ognuno con la propria cartella conte
 La repository segue questa struttura:
 
 Prog1/
-├── Esercizi in c/
-│   ├── allocazioni/
-│   │   ├── allocazioni.c
-│   │   ├── allocazioni.png
-│   │   └── README.md
-│   ├── Percentuale/
-│   │   ├── Percentuale.c
-│   │   └── README.md
-│   ├── palindrome/
-│   │   ├── palindrome.c
-│   │   └── README.md
-│   ├── definizioni/
-│   │   ├── definizioni.c
-│   │   └── README.md
-│   ├── Funzioni/
-│   │   ├── funzioni.c
-│   │   ├── funzione.png
-│       ├── prototipi.h
-│   │   └── README.md
-│   └── puntatori/
-│       ├── puntatori.c
-│       ├── puntatore.png
-│       └── README.md
-└── README.md (Questo file)
+├── `Esercizi in c`/
+│   ├── `allocazioni`/
+│   │   ├── `allocazioni.c`
+│   │   ├── `allocazioni.png`
+│   │   └── `README.md`
+│   ├── `Percentuale`/
+│   │   ├── `Percentuale.c`
+│   │   └── `README.md`
+│   ├── `palindrome`/
+│   │   ├── `palindrome.c`
+│   │   └── `README.md`
+│   ├── `definizioni`/
+│   │   ├── `definizioni.c`
+│   │   └── `README.md`
+│   ├── `Funzioni`/
+│   │   ├── `funzioni.c`
+│   │   ├── `funzione.png`
+│   │   ├── `prototipi.h`
+│   │   └── `README.md`
+│   └── `puntatori`/
+│       ├── `puntatori.c`
+│       ├── `puntatore.png`
+│       └── `README.md`
+└── `README.md` (Questo file)
 
 
 ## Come Usare Questa Repository
