@@ -40,7 +40,4 @@ Per esempio, per studiare l'allocazione dinamica della memoria, puoi:
 
 ## Contribuzioni
 
-Le contribuzioni sono benvenute! Se trovi errori, hai suggerimenti per migliorare le spiegazioni o vuoi aggiungere nuovi esempi, puoi aprire una "issue" o inviare una "pull request".
-
-
-e rendimelo scaricabile
+Le contribuzioni sono benvenute! Se trovi errori, hai suggerimenti per migliorare le spiegazioni scrivi su telegram: @tapatre
