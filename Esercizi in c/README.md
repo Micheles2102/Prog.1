@@ -184,7 +184,7 @@ Calcolare il rapporto tra la somma della riga i di A e il prodotto della colonna
 Gestire il caso in cui il prodotto delle colonne di B sia 0
 
 ### Funzione C:
-'''c 
+```c 
 
     #include <stdio.h>
     #include <stdlib.h>
@@ -219,9 +219,9 @@ Gestire il caso in cui il prodotto delle colonne di B sia 0
     }
     return rapporto;
 }
-'''
+```
 ## Esempio di utilizzo (in main()):
-'''c
+```c
 
     int main() {
        //Allocazione dinamica delle matrici A e B
@@ -237,7 +237,7 @@ Gestire il caso in cui il prodotto delle colonne di B sia 0
 
        return 0;
     }
-'''
+```
 ## Conclusioni
 
 Gli esercizi presentano diverse tecniche di programmazione in C, tra cui:
