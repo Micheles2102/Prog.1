@@ -3,7 +3,7 @@
 
 Questo repository contiene  esercizi di programmazione in C che lavorano con matrici di stringhe,funzioni,puntatori,allocazioni. Di seguito vengono descritti gli esercizi e l'idea dietro ciascuno.
 
-ATTENZIONE: prima di vedere come sono stati svolti gli esercizi, provate a farli da voi o per lo meno di sviluppare una logica dietro l'esercizio. Comprendete il codice ma soprattutto la logia che c'è dietro
+##ATTENZIONE: prima di vedere come sono stati svolti gli esercizi, provate a farli da voi o per lo meno di sviluppare una logica dietro l'esercizio. Comprendete il codice ma soprattutto la logia che c'è dietro
 
 ## Esercizio 1: Verifica della presenza di una colonna con lo stesso numero di stringhe palindrome di una riga
 
