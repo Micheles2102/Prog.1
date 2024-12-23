@@ -67,5 +67,56 @@ int main() {
     array_statico[0] = 42;
     contatore++;
 
+    //ALLOCAZIONE DINAMICA ESEMPI VARI:
+    //array di puntatori
+    int* *array_puntatori = malloc(5 * sizeof(int*));
+    //Analizziamo la struttura:
+
+    //int* * -> dichiara un puntatore a puntatore a int
+    //malloc(5 * sizeof(int*)) -> alloca spazio per 5 puntatori
+     for (int i = 0; i < 5; i++) {
+        array_puntatori[i] = malloc(3 * sizeof(int));
+        if (!array_puntatori[i]) {
+            // Gestione errore
+            for (int j = 0; j < i; j++) {
+                free(array_puntatori[j]);
+            }
+            free(array_puntatori);
+            return 1;
+        }
+        array_puntatori[i][0] = i;  // Esempio di accesso
+    }
+    
+    //matrice 
+    int rows = 3, cols = 4;
+    int** matrice = malloc(rows * sizeof(int*));
+    if (!matrice) return 1;
+
+    for (int i = 0; i < rows; i++) {
+        matrice[i] = malloc(cols * sizeof(int));
+        if (!matrice[i]) {
+            for (int j = 0; j < i; j++) {
+                free(matrice[j]);
+            }
+            free(matrice);
+            return 1;
+        }
+        for (int j = 0; j < cols; j++) {
+            matrice[i][j] = i * cols + j;
+        }
+    }
+
+     // Deallocazione array di puntatori
+    for (int i = 0; i < 5; i++) {
+        free(array_puntatori[i]);
+    }
+    free(array_puntatori);
+
+    // Deallocazione matrice
+    for (int i = 0; i < rows; i++) {
+        free(matrice[i]);
+    }
+    free(matrice);
+
     return 0;
 }
