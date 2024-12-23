@@ -34,7 +34,7 @@ Per studiare un argomento, basta navigare nella cartella corrispondente e legger
 
 Per esempio, per studiare l'allocazione dinamica della memoria, puoi:
 
-1.  Navigare nella cartella Esercizi in c/allocazioni/.
+1.  Navigare nella cartella Allocazioni.
 2.  Aprire il file README.md per leggere la spiegazione teorica e vedere il diagramma allocazioni.png.
 3.  Compilare ed eseguire il codice di esempio allocazioni.c per mettere in pratica i concetti appresi.
 
