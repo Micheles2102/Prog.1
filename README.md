@@ -15,7 +15,7 @@ La repository è organizzata per argomenti, ognuno con la propria cartella conte
 *   **[Percentuale](Esercizi%20in%20c/Percentuale/README.md):** Esercizi sul calcolo delle percentuali, applicati a matrici di stringhe.
 * **[Esercizi in c](Esercizi%20in%20c):**
   *   **[Palindrome](Esercizi%20in%20c/palindrome/README.md):** Implementazione di algoritmi per la verifica di stringhe       palindrome.
-  *   **[Definizioni](Esercizi%20in%20c/definizioni/README.md):** Spiegazioni e esempi di definizioni, costanti, macro e       altri elementi fondamentali del C.
+  *   **[Percentuale](Esercizi%20in%20c/Percentuale/README.md):** Implementazione di algoritmi per la verifica di caratteri tra una matrice di stringhe ed un array di caratteri.
 *   **[Funzioni](Esercizi%20in%20c/Funzioni/README.md):** Studio approfondito delle funzioni: definizione, prototipi, parametri (per valore e per riferimento), passaggio di array.
 *   **[Puntatori](Esercizi%20in%20c/puntatori/README.md):** Guida completa ai puntatori: dichiarazione, inizializzazione, dereferenziazione, aritmetica dei puntatori, puntatori a costanti e puntatori costanti.
 
