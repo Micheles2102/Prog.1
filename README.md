@@ -38,6 +38,6 @@ Per esempio, per studiare l'allocazione dinamica della memoria, puoi:
 2.  Aprire il file README.md per leggere la spiegazione teorica e vedere il diagramma allocazioni.png.
 3.  Compilare ed eseguire il codice di esempio allocazioni.c per mettere in pratica i concetti appresi.
 
-## Contribuzioni
+## Contatti
 
 Le contribuzioni sono benvenute! Se trovi errori, hai suggerimenti per migliorare le spiegazioni scrivi su telegram: @tapatre
