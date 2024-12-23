@@ -19,7 +19,7 @@ In C, l'allocazione della memoria si divide in tre categorie principali:
 | 4     | Esempio di Funzione con Allocazione Heap |
 
 ---
-
+![Esempio allocazioni](allocazione.png)
 ## 💻 **Codice Esempio**
 ```c
 #include <stdio.h>
