@@ -168,6 +168,76 @@ In questo esempio, la funzione restituirà `false` poiché la percentuale di car
 
 ---
 
+## Esercizio 3: Rapporto tra somme di righe di A e prodotti di colonne di B
+## Descrizione dell'esercizio:
+Scrivere una funzione che prenda in input due matrici di interi positivi: A (n × m) e B (k × n). La funzione deve restituire un array C di double di dimensione n, dove l'i-esimo elemento di C è il rapporto tra la somma degli elementi della riga i-esima di A e il prodotto degli elementi della colonna i-esima di B.
+
+## Dettagli:
+Input: matrici A (n × m) e B (k × n).
+Output: array C di double di dimensione n.
+## Soluzione:
+Per ogni riga i di A:
+Calcolare la somma degli elementi.
+Per ogni colonna i di B:
+Calcolare il prodotto degli elementi.
+Calcolare il rapporto tra la somma della riga i di A e il prodotto della colonna i di B e memorizzarlo in C[i].
+Gestire il caso in cui il prodotto delle colonne di B sia 0
+
+### Funzione C:
+'''c 
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <float.h>
+
+double* rapporto_tra_matrici(int **A, int n, int m, int **B, int k) {
+    double* rapporto = (double*)malloc(sizeof(double) * n);
+    if (rapporto == NULL) {
+        perror("Errore allocazione rapporto");
+        exit(EXIT_FAILURE);
+    }
+
+    for (int i = 0; i < n; i++) {
+        int somma_righe = 0;
+        int prodotto_colonne = 1;
+
+        for (int j = 0; j < m; j++) {
+            somma_righe += A[i][j];
+        }
+
+        for (int t = 0; t < k; t++) {
+            prodotto_colonne *= B[t][i];
+        }
+
+        if (prodotto_colonne == 0) {
+            fprintf(stderr, "Errore: prodotto della colonna %d di B è zero.\n", i);
+            rapporto[i] = DBL_MAX; //assegno il valore massimo per rappresentare l'infinito
+            continue; //passa alla prossima iterazione
+        }
+
+        rapporto[i] = (double)somma_righe / prodotto_colonne;
+    }
+    return rapporto;
+}
+'''
+## Esempio di utilizzo (in main()):
+'''c
+
+int main() {
+    //Allocazione dinamica delle matrici A e B
+    int** A = (int**)malloc(n * sizeof(int*));
+    int** B = (int**)malloc(k * sizeof(int*));
+
+
+    //(allocazione e inizializzazione di A e B)
+   
+    double* D = rapporto_tra_matrici(A, n, m, B, k);
+
+    //(stampa e deallocazione di D, A e B)
+
+    return 0;
+}
+'''
 ## Conclusioni
 
 Gli esercizi presentano diverse tecniche di programmazione in C, tra cui:
