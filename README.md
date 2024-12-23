@@ -13,7 +13,7 @@ La repository è organizzata per argomenti, ognuno con la propria cartella conte
 
 *   **[Allocazioni](Esercizi%20in%20c/allocazioni/README.md):** Gestione dinamica della memoria (allocazione statica, automatica e dinamica con malloc, calloc, realloc, free).
 *   **[Percentuale](Esercizi%20in%20c/Percentuale/README.md):** Esercizi sul calcolo delle percentuali, applicati a matrici di stringhe.
-* **[Percentuale](Esercizi%20in%20c/Eserciziinc/README.md):**
+* **[Esercizi in c](Esercizi%20in%20c/Eserciziinc/README.md):**
   *   **[Palindrome](Esercizi%20in%20c/palindrome/README.md):** Implementazione di algoritmi per la verifica di stringhe       palindrome.
   *   **[Definizioni](Esercizi%20in%20c/definizioni/README.md):** Spiegazioni e esempi di definizioni, costanti, macro e       altri elementi fondamentali del C.
 *   **[Funzioni](Esercizi%20in%20c/Funzioni/README.md):** Studio approfondito delle funzioni: definizione, prototipi, parametri (per valore e per riferimento), passaggio di array.
