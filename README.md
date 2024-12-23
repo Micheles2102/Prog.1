@@ -21,7 +21,7 @@ La repository è organizzata per argomenti, ognuno con la propria cartella conte
 ## Struttura delle Cartelle
 
 La repository segue questa struttura:
-
+'''
 Prog1/
 ├── `Esercizi in c`/
 │   ├── `allocazioni`/
@@ -47,7 +47,7 @@ Prog1/
 │       ├── `puntatore.png`
 │       └── `README.md`
 └── `README.md` (Questo file)
-
+'''
 
 ## Come Usare Questa Repository
 
