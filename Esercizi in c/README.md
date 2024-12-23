@@ -186,20 +186,20 @@ Gestire il caso in cui il prodotto delle colonne di B sia 0
 ### Funzione C:
 '''c 
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <float.h>
+    #include <stdio.h>
+    #include <stdlib.h>
+    #include <float.h>
 
-double* rapporto_tra_matrici(int **A, int n, int m, int **B, int k) {
-    double* rapporto = (double*)malloc(sizeof(double) * n);
-    if (rapporto == NULL) {
-        perror("Errore allocazione rapporto");
-        exit(EXIT_FAILURE);
-    }
+    double* rapporto_tra_matrici(int **A, int n, int m, int **B, int k) {
+       double* rapporto = (double*)malloc(sizeof(double) * n);
+       if (rapporto == NULL) {
+         perror("Errore allocazione rapporto");
+         exit(EXIT_FAILURE);
+       }
 
-    for (int i = 0; i < n; i++) {
-        int somma_righe = 0;
-        int prodotto_colonne = 1;
+       for (int i = 0; i < n; i++) {
+           int somma_righe = 0;
+           int prodotto_colonne = 1;
 
         for (int j = 0; j < m; j++) {
             somma_righe += A[i][j];
@@ -223,20 +223,20 @@ double* rapporto_tra_matrici(int **A, int n, int m, int **B, int k) {
 ## Esempio di utilizzo (in main()):
 '''c
 
-int main() {
-    //Allocazione dinamica delle matrici A e B
-    int** A = (int**)malloc(n * sizeof(int*));
-    int** B = (int**)malloc(k * sizeof(int*));
+    int main() {
+       //Allocazione dinamica delle matrici A e B
+       int** A = (int**)malloc(n * sizeof(int*));
+       int** B = (int**)malloc(k * sizeof(int*));
 
 
-    //(allocazione e inizializzazione di A e B)
+       //(allocazione e inizializzazione di A e B)
    
-    double* D = rapporto_tra_matrici(A, n, m, B, k);
+       double* D = rapporto_tra_matrici(A, n, m, B, k);
 
-    //(stampa e deallocazione di D, A e B)
+       //(stampa e deallocazione di D, A e B)
 
-    return 0;
-}
+       return 0;
+    }
 '''
 ## Conclusioni
 
