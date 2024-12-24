@@ -5,6 +5,8 @@ quindi contiene stringhe), uno short w ed uno short k, e restituisca
 il valore booleano true (1) se in S sono presenti almeno una riga
 ed almeno una colonna che presentano ciascuna almeno w stringhe
 di lunghezza minore di k
+
+Note: Prestare attenzione al fatto che deve essere contenuto sia nelle colonne che nelle righe . Basta una sola volta.
 */
 
 #include <stdio.h>
@@ -21,7 +23,7 @@ bool stringhe_minori(char* S[n][m],short w, short k){
     int stringhe_trovate;
     bool trovate=0;
 
-    //
+    //controllo sulle righe
     for(int i=0;i<n;i++){
         stringhe_trovate=0;
         for(int j=0;j<m;j++){
@@ -38,8 +40,9 @@ bool stringhe_minori(char* S[n][m],short w, short k){
             break;
         }
     }
+    //controllo sulle colonne
     if(trovate){// se non trova una riga che soddisfi le condizioni non c'è bisogno che entri in questi for
-        trovate=0;
+        trovate=0;//importante resettarlo una volta entrato.(essendo entrato abbiamo garantito che nelle righe ci sia, ma se non viene trovato nelle colonne deve restituire 0. Se non resettiamo ritornerà sempre 1.
         for(int j=0;j<m;j++){
             stringhe_trovate=0;
             for(int i=0;i<n;i++){
