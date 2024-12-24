@@ -325,6 +325,156 @@ int main() {
     double B[k][n] = {{1.1, 5.2, 9.3}, {2.9, 6.1, 10.8}};
 }
 ```
+
+# Verifica di Righe e Colonne con Stringhe Brevi
+
+## Descrizione dell'Esercizio
+
+Codificare una funzione in C che prenda in input:
+- Una matrice `S` di puntatori a carattere di dimensioni `n × m` (quindi contenente stringhe),
+- Un valore intero `w`,
+- Un valore intero `k`,
+
+e restituisca il valore booleano `true` (1) se in `S` sono presenti:
+1. Almeno una riga con almeno `w` stringhe di lunghezza minore di `k`, **e**
+2. Almeno una colonna con almeno `w` stringhe di lunghezza minore di `k`.
+
+## Soluzione in C
+
+### Codice della Funzione
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <stdbool.h>
+#include <string.h>
+
+#define n 3
+#define m 4
+
+bool stringhe_minori(char* S[n][m], short w, short k) {
+    int lunghezza_parola = 0;
+    int stringhe_trovate;
+    bool trovate = 0;
+
+    // Controlla se esiste almeno una riga che soddisfa la condizione
+    for (int i = 0; i < n; i++) {
+        stringhe_trovate = 0;
+        for (int j = 0; j < m; j++) {
+            if (S[i][j]) {
+                lunghezza_parola = strlen(S[i][j]);
+                if (lunghezza_parola < k) {
+                    stringhe_trovate++;
+                }
+            }
+        }
+        if (stringhe_trovate >= w) {
+            trovate = 1;
+            break;
+        }
+    }
+
+    if (trovate) {
+        // Controlla se esiste almeno una colonna che soddisfa la condizione
+        trovate = 0;
+        for (int j = 0; j < m; j++) {
+            stringhe_trovate = 0;
+            for (int i = 0; i < n; i++) {
+                if (S[i][j]) {
+                    lunghezza_parola = strlen(S[i][j]);
+                    if (lunghezza_parola < k) {
+                        stringhe_trovate++;
+                    }
+                }
+            }
+            if (stringhe_trovate >= w) {
+                trovate = 1;
+                break;
+            }
+        }
+    }
+
+    return trovate;
+}
+```
+
+### Codice di Test
+```c
+int main() {
+    char* S[n][m] = {
+        {"ciao", "a", "tutti", "oggi"},
+        {"sono", "qui", "per", "voi"},
+        {"e", "voi", "con", "me"}
+    };
+
+    printf("Test con w=2 e k=4: %d\n", stringhe_minori(S, 2, 4)); // Output atteso: 1 (true)
+
+    char* S2[n][m] = {
+        {"ciao", "a", "tutti", "oggi"},
+        {"sono", "qui", "per", "voi"},
+        {"lunghissima", "stringa", "con", "me"}
+    };
+
+    printf("Test con w=2 e k=4 (nessuna colonna): %d\n", stringhe_minori(S2, 2, 4)); // Output atteso: 1 (true)
+
+    char* S3[n][m] = {
+        {"ciao", "abcd", "tutti", "oggi"},
+        {"sono", "quis", "personaggio", "voi"},
+        {"etanolo", "a", "constantino", "merenda"}
+    };
+
+    printf("Test con w=3 e k=4 (nessuna riga): %d\n", stringhe_minori(S3, 3, 4)); // Output atteso: 0 (false)
+
+    return 0;
+}
+```
+
+## Spiegazione del Codice
+1. **Verifica delle Righe**:
+   - Per ogni riga della matrice, viene calcolato il numero di stringhe con lunghezza minore di `k`.
+   - Se almeno una riga contiene almeno `w` stringhe brevi, si passa al controllo delle colonne.
+
+2. **Verifica delle Colonne**:
+   - Per ogni colonna della matrice, viene calcolato il numero di stringhe con lunghezza minore di `k`.
+   - Se almeno una colonna contiene almeno `w` stringhe brevi, la funzione restituisce `true`.
+
+3. **Gestione di Valori Nulli**:
+   - Si controlla che ogni elemento della matrice non sia `NULL` prima di calcolare la lunghezza della stringa, per evitare errori.
+
+## Output Atteso
+### Input 1:
+```c
+w = 2, k = 4
+S = {
+    {"ciao", "a", "tutti", "oggi"},
+    {"sono", "qui", "per", "voi"},
+    {"e", "voi", "con", "me"}
+}
+```
+**Output**: `1 (true)`
+
+### Input 2:
+```c
+w = 2, k = 4
+S = {
+    {"ciao", "a", "tutti", "oggi"},
+    {"sono", "qui", "per", "voi"},
+    {"lunghissima", "stringa", "con", "me"}
+}
+```
+**Output**: `1 (true)`
+
+### Input 3:
+```c
+w = 3, k = 4
+S = {
+    {"ciao", "abcd", "tutti", "oggi"},
+    {"sono", "quis", "personaggio", "voi"},
+    {"etanolo", "a", "constantino", "merenda"}
+}
+```
+**Output**: `0 (false)`
+
 ## Conclusioni
 
 Gli esercizi presentano diverse tecniche di programmazione in C, tra cui:
