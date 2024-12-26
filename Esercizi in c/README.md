@@ -793,6 +793,135 @@ char** concatenazione_stringhe(char* A[n][m], short B[n][m]) {
 
 ---
 
+# Conteggio Stringhe Inizio-Fine in Matrice
+
+## Descrizione dell'esercizio
+
+Scrivere una funzione in C che prenda in input:
+1. **S**: una matrice di stringhe di dimensione \( n \times m \).
+2. **C**: un array di caratteri di dimensione \( n \).
+3. **D**: un array di caratteri di dimensione \( n \).
+
+La funzione deve restituire un array di short nel quale il generico elemento di indice \( i \) contiene il numero di stringhe nella riga \( i \) della matrice \( S \) che iniziano con il carattere \( C[i] \) e terminano con il carattere \( D[i] \).
+
+---
+
+## Funzionamento della Soluzione
+
+### Input:
+1. **S**: Matrice di stringhe di dimensione \( n \times m \).
+2. **C**: Array di caratteri di dimensione \( n \).
+3. **D**: Array di caratteri di dimensione \( n \).
+
+### Output:
+Un array di short di dimensione \( n \), dove ogni elemento \( i \) rappresenta il conteggio delle stringhe che rispettano i criteri descritti nella riga \( i \) di \( S \).
+
+---
+
+## Soluzione in C
+
+La funzione è implementata nel seguente modo:
+1. **Iterare sulla matrice**:
+   - Per ogni riga \( i \), scorrere le stringhe della matrice \( S[i][j] \).
+2. **Controllare i criteri**:
+   - Verificare se la stringa \( S[i][j] \) inizia con il carattere \( C[i] \) e termina con il carattere \( D[i] \).
+3. **Aggiornare il conteggio**:
+   - Incrementare il contatore per la riga \( i \) se entrambi i criteri sono soddisfatti.
+
+---
+
+## Esempio di Utilizzo
+
+### Codice del Main:
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define n 3
+#define m 4
+
+int main() {
+    char* S[n][m] = {
+        {"casa", "albero", "chitarra", "ok"}, 
+        {"camera", "topo", "uccello", "prova"}, 
+        {"sole", "luna", "salame", "mouse"}
+    };
+    char C[n] = {'c', 't', 's'};
+    char D[n] = {'a', 'o', 'a'};
+
+    short* risultato = inizio_fine_stringa(S, C, D);
+
+    for (int i = 0; i < n; i++) {
+        printf("Riga %d: %d stringhe\n", i, risultato[i]);
+    }
+
+    free(risultato);
+    return 0;
+}
+```
+
+### Output:
+Per i dati di input:
+- **S**:
+  ```
+  {{"casa", "albero", "chitarra", "ok"},
+   {"camera", "topo", "uccello", "prova"},
+   {"sole", "luna", "salame", "mouse"}}
+  ```
+- **C**:
+  ```
+  {'c', 't', 's'}
+  ```
+- **D**:
+  ```
+  {'a', 'o', 'a'}
+  ```
+
+Il risultato sarà:
+```
+Riga 0: 2 stringhe
+Riga 1: 1 stringhe
+Riga 2: 2 stringhe
+```
+
+---
+
+## Funzioni Utilizzate
+
+### inizio_fine_stringa
+```c
+short* inizio_fine_stringa(char* S[n][m], char C[n], char D[n]) {
+    short* array = (short*)malloc(sizeof(short) * n);
+    char* parola;
+
+    for (int i = 0; i < n; i++) {
+        array[i] = 0;
+        for (int j = 0; j < m; j++) {
+            parola = S[i][j];
+            if (parola[0] == C[i] && parola[strlen(parola) - 1] == D[i]) {
+                array[i] += 1;
+            }
+        }
+    }
+    return array;
+}
+```
+
+---
+
+## Note
+1. **Funzioni Standard Usate**:
+   - `strlen()`: Per calcolare la lunghezza di una stringa.
+2. **Allocazione Dinamica**:
+   - La memoria per l'array di risultati viene allocata dinamicamente. È essenziale liberare la memoria dopo l'uso per evitare fughe di memoria.
+3. **Assenza di Controlli di Errore**:
+   - Non sono stati implementati controlli per verificare che la matrice \( S \), l'array \( C \) e l'array \( D \) siano validi (ad esempio, verificare la presenza di valori nulli o dimensioni corrette).
+   - Questi controlli dovrebbero essere aggiunti in un'applicazione reale.
+
+---
+
+
 
 
 
