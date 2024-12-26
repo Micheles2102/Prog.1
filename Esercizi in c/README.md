@@ -537,6 +537,113 @@ bool sequenza_monotona(int A[n][m], short w, short k) {
     return false; // Restituisce false se non ci sono abbastanza colonne valide
 }
 
+# Esercizio: Ricerca di stringhe in una matrice
+
+## Descrizione dell'Esercizio
+Codificare una funzione in C che:
+- Prenda in input:
+  - Una matrice `A` di stringhe di dimensione `n × m`.
+  - Una stringa `s` da cercare.
+- Restituisca `true` (1) se esistono **almeno due stringhe diverse** in `A` che:
+  1. Contengano la stringa `s`.
+  2. Abbiano **differenti indici di riga e di colonna**.
+
+## Dettagli
+- La funzione deve utilizzare la funzione di libreria `strstr()` per verificare se la stringa `s` è contenuta all'interno di una stringa.
+- La matrice di input `A` è costituita da puntatori a stringhe.
+
+## Implementazione
+
+### Funzione C:
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
+
+#define n 3
+#define m 4
+
+bool stringa_contenuta(char* A[n][m], char* s) {
+    int stringhe_trovate = 0;
+    int riga = -1, colonna = -1; // Inizializzati a -1 per evitare conflitti
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            if (strstr(A[i][j], s) != NULL) {
+                if (stringhe_trovate == 0) {
+                    riga = i;
+                    colonna = j;
+                } else if (i != riga || j != colonna) {
+                    return true; // Trovate due stringhe valide in posizioni diverse
+                }
+                stringhe_trovate++;
+            }
+        }
+    }
+    return false; // Meno di due stringhe trovate
+}
+
+int main() {
+    char *matrice1[n][m] = {
+        {"ciao mondo", "test", "esempio", "prova"},
+        {"mondo", "ciao", "test", "esempio"},
+        {"prova", "esempio mondo", "ciao", "test"}
+    };
+
+    char *matrice2[n][m] = {
+        {"ciao", "test", "esempio", "prova"},
+        {"mondo", "ciao", "test", "esempio"},
+        {"prova", "ciao", "ciao", "test"}
+    };
+
+    char *matrice3[n][m] = {
+        {"ciao", "test", "esempio", "prova"},
+        {"mondo", "test", "test", "esempio"},
+        {"prova", "test", "test", "mondo"}
+    };
+
+    char *stringa_da_cercare = "mondo";
+
+    if (stringa_contenuta(matrice1, stringa_da_cercare)) {
+        printf("Matrice 1: Trovate almeno due stringhe diverse con \"%s\"\n", stringa_da_cercare);
+    } else {
+        printf("Matrice 1: Non trovate almeno due stringhe diverse con \"%s\"\n", stringa_da_cercare);
+    }
+
+    if (stringa_contenuta(matrice2, stringa_da_cercare)) {
+        printf("Matrice 2: Trovate almeno due stringhe diverse con \"%s\"\n", stringa_da_cercare);
+    } else {
+        printf("Matrice 2: Non trovate almeno due stringhe diverse con \"%s\"\n", stringa_da_cercare);
+    }
+
+    if (stringa_contenuta(matrice3, stringa_da_cercare)) {
+        printf("Matrice 3: Trovate almeno due stringhe diverse con \"%s\"\n", stringa_da_cercare);
+    } else {
+        printf("Matrice 3: Non trovate almeno due stringhe diverse con \"%s\"\n", stringa_da_cercare);
+    }
+
+    return 0;
+}
+```
+
+## Spiegazione del Codice
+1. **Definizione della funzione `stringa_contenuta`:**
+   - Esamina ogni stringa nella matrice `A`.
+   - Utilizza `strstr()` per verificare se `s` è contenuta in ciascuna stringa.
+   - Tiene traccia della posizione della prima stringa trovata.
+   - Restituisce `true` se viene trovata una seconda stringa con indici di riga e colonna diversi.
+
+2. **Funzione `main`:**
+   - Esegue il test della funzione `stringa_contenuta` su tre diverse matrici di esempio.
+   - Stampa il risultato per ogni matrice.
+
+## Esempio di Output
+```
+Matrice 1: Trovate almeno due stringhe diverse con "mondo"
+Matrice 2: Non trovate almeno due stringhe diverse con "mondo"
+Matrice 3: Trovate almeno due stringhe diverse con "mondo"
+
 
 ## Conclusioni
 
