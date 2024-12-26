@@ -475,8 +475,6 @@ S = {
 ```
 **Output**: `0 (false)`
 
-# Creating a README.md file for the exercise and saving it for download
-readme_content = """
 # Esercizio: Sequenze Monotone Crescenti in Matrici
 
 ## Descrizione dell'esercizio:
