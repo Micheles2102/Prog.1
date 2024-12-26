@@ -23,12 +23,12 @@ NON SONO STATI SVOLTI CONTROLLI. Ho scritto io il main quindi non ho inserito co
 #define k 2
 
 int trova_colonna_maggiore(double A[n][k], int B[n]) {
-   int colonna_maggiore_numero=-1;
+   int colonna_maggiore_numero=-1;//conserva l'indice della colonna maggiore di elementi che approssimati sono uguali a quelli in B
    int numero_elementi_attuali;
    int numero_elementi_precedenti=0;
    int numero_castato;
    for(int j=0;j<k;j++){
-      int numero_elementi_attuali=0;
+       numero_elementi_attuali=0;
         for(int i=0;i<n;i++){
           numero_castato=(int)round(A[i][j]);
             if(numero_castato==B[i]){
