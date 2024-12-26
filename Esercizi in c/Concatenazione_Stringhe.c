@@ -29,16 +29,16 @@ char** concatenazione_stringhe(char* A[n][m], short B[n][m]) {
 
     for (int i = 0; i < n; i++) {
         //per riuscire ad allocare con successo dobbiamo prima capire qual'è la massima dimensione che possiamo trovare come concatenazione di stringhe per quella colonna(Senza questa parte di codice,strcat potrebbe poratre a problemi)
-        int max_len = 0;
+        int lunghezza_massima= 0;
         for (int j = 0; j < m; j++) {
             if (strlen(A[i][j]) >= B[i][j]) {
-                max_len += strlen(A[i][j]);
+                lunghezza_massima += strlen(A[i][j]);
             }
         }
 
         // finiamo di allocare (ricordando che stiamo allocando un array di puntatori a caratteri)
-        array[i] = malloc(max_len + 1); //Importante ricordarsi di aggiungere +1 per il carattere nullo.
-        array[i][0] = '\0'; //
+        array[i] = malloc(lunghezza_massima + 1); //Importante ricordarsi di aggiungere +1 per il carattere nullo.
+        array[i][0] = '\0'; 
 
         for (int j = 0; j < m; j++) {
             if (strlen(A[i][j]) >= B[i][j]) {
