@@ -10,7 +10,7 @@ i)
 
 Note:
 Per risolvere questo esercizio applicheremo la funzione round() castando ad int.(Ricordo che per usarla bisogna definire la libreria math.h)
-NON SONO STATI SVOLTI CONTROLLI. Ho scritot io il main quindi non ho inserito controlli. In sede di esame assicuratevi di inserire controlli
+NON SONO STATI SVOLTI CONTROLLI. Ho scritto io il main quindi non ho inserito controlli. In sede di esame assicuratevi di inserire controlli
 */
 
 
