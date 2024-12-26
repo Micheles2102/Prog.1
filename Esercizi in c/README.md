@@ -475,6 +475,71 @@ S = {
 ```
 **Output**: `0 (false)`
 
+# Creating a README.md file for the exercise and saving it for download
+readme_content = """
+# Esercizio: Sequenze Monotone Crescenti in Matrici
+
+## Descrizione dell'esercizio:
+Scrivere una funzione in C che prenda in input:
+- una matrice \( A \) di interi con dimensioni \( n \times m \),
+- uno short \( k \) che rappresenta la lunghezza minima di una sequenza monotona crescente,
+- uno short \( w \) che rappresenta il numero minimo di colonne che devono contenere almeno una sequenza valida.
+
+La funzione deve restituire il valore booleano `true` (1) se almeno \( w \) colonne della matrice contengono almeno una sequenza monotona crescente di lunghezza maggiore o uguale a \( k \). In caso contrario, restituisce `false` (0).
+
+## Dettagli:
+- **Input**: Matrice \( A \) di dimensioni \( n \times m \), interi \( k \) e \( w \).
+- **Output**: Valore booleano \( true \) (1) o \( false \) (0).
+- **Definizione di sequenza monotona crescente**:
+  Una sequenza di interi è monotona crescente se ogni elemento è maggiore o uguale al precedente.
+  Esempio: \( 1, 2, 2, 3, 4, 5 \).
+
+## Soluzione:
+Per ogni colonna della matrice \( A \):
+1. Iterare attraverso le righe della colonna per identificare sequenze monotone crescenti.
+2. Contare la lunghezza della sequenza attuale e resettarla se la monotonia viene interrotta.
+3. Se una sequenza valida (lunghezza \( \geq k \)) viene trovata, incrementare il conteggio delle colonne valide.
+4. Restituire `true` se il numero di colonne valide è maggiore o uguale a \( w \), altrimenti `false`.
+
+---
+
+## Implementazione in C:
+```c
+#include <stdio.h>
+#include <stdbool.h>
+
+#define n 3
+#define m 4
+
+bool sequenza_monotona(int A[n][m], short w, short k) {
+    int colonne_valide = 0; // Conta le colonne con almeno una sequenza valida
+
+    for (int j = 0; j < m; j++) { // Itera sulle colonne
+        int lunghezza = 1; // Ogni sequenza inizia con almeno un elemento
+        for (int i = 1; i < n; i++) { // Itera sulle righe della colonna
+            if (A[i][j] >= A[i-1][j]) { // Verifica la monotonia crescente
+                lunghezza++;
+            } else {
+                lunghezza = 1; // Reset della lunghezza della sequenza
+            }
+
+            // Controlla se la lunghezza della sequenza soddisfa il requisito
+            if (lunghezza >= k) {
+                colonne_valide++;
+                break; // Passa alla prossima colonna
+            }
+        }
+
+        // Interrompe il ciclo se abbiamo trovato abbastanza colonne valide
+        if (colonne_valide >= w) {
+            return true;
+        }
+    }
+
+    return false; // Restituisce false se non ci sono abbastanza colonne valide
+}
+
+
 ## Conclusioni
 
 Gli esercizi presentano diverse tecniche di programmazione in C, tra cui:
