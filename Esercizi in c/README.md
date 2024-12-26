@@ -536,7 +536,7 @@ bool sequenza_monotona(int A[n][m], short w, short k) {
 
     return false; // Restituisce false se non ci sono abbastanza colonne valide
 }
-
+```
 # Esercizio: Ricerca di stringhe in una matrice
 
 ## Descrizione dell'Esercizio
@@ -643,6 +643,157 @@ int main() {
 Matrice 1: Trovate almeno due stringhe diverse con "mondo"
 Matrice 2: Non trovate almeno due stringhe diverse con "mondo"
 Matrice 3: Trovate almeno due stringhe diverse con "mondo"
+```
+# Concatenazione di Stringhe in Matrice basata su Lunghezze
+
+## Descrizione dell'esercizio
+
+Scrivere una funzione in C che prenda in input due matrici:
+1. **A**: una matrice di stringhe di dimensione \( n \times m \).
+2. **B**: una matrice di numeri short di dimensione \( n \times m \).
+
+La funzione deve restituire un array di \( n \) stringhe. Per ogni riga \( i \) della matrice \( A \), il corrispondente elemento nell'array risultante è la concatenazione di tutte le stringhe della riga \( i \) che hanno una lunghezza maggiore o uguale al valore nella stessa posizione della matrice \( B \).
+
+### Dettagli
+- **Confronto**: La stringa \( A[i][j] \) viene inclusa nella concatenazione se la sua lunghezza (\`strlen(A[i][j])\`) è maggiore o uguale al valore corrispondente \( B[i][j] \).
+- **Concatenazione**: La concatenazione delle stringhe viene effettuata usando la funzione `strcat()` di C.
+
+---
+
+## Funzionamento della Soluzione
+
+### Input:
+1. Matrice di stringhe \( A \) di dimensione \( n \times m \).
+2. Matrice di numeri short \( B \) di dimensione \( n \times m \).
+
+### Output:
+Un array di \( n \) stringhe, ciascuna rappresentante la concatenazione filtrata della rispettiva riga di \( A \).
+
+---
+
+## Soluzione in C
+
+La funzione è implementata nel seguente modo:
+1. **Determinare la lunghezza massima necessaria per l'allocazione**:
+   - Per ogni riga della matrice \( A \), calcolare la somma delle lunghezze di tutte le stringhe che soddisfano la condizione \( \text{strlen}(A[i][j]) \geq B[i][j] \).
+2. **Allocare memoria dinamica**:
+   - Allocare memoria per ogni elemento dell'array risultante in base alla lunghezza massima calcolata.
+3. **Concatenare le stringhe**:
+   - Usare `strcat()` per concatenare le stringhe che soddisfano la condizione.
+4. **Restituire l'array risultante**.
+
+---
+
+## Esempio di Utilizzo
+
+### Codice del Main:
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define n 3
+#define m 4
+
+int main() {
+    char* A[n][m] = {
+        {"ciao", "cane", "abc", "test"},
+        {"stringa", "lunga", "gatto", "ok"},
+        {"hello", "no", "prova", "fine"}
+    };
+
+    short B[n][m] = {
+        {2, 5, 3, 4},
+        {7, 4, 6, 1},
+        {5, 3, 2, 3}
+    };
+
+    char** risultato = concatenazione_stringhe(A, B);
+
+    printf("Risultato:\n");
+    for (int i = 0; i < n; i++) {
+        printf("Riga %d: %s\n", i, risultato[i]);
+    }
+
+    // Libero la memoria allocata
+    for (int i = 0; i < n; i++) {
+        free(risultato[i]);
+    }
+    free(risultato);
+
+    return 0;
+}
+```
+
+### Output:
+Per i dati di input:
+- **A**:
+  ```
+  {{"ciao", "cane", "abc", "test"},
+   {"stringa", "lunga", "gatto", "ok"},
+   {"hello", "no", "prova", "fine"}}
+  ```
+- **B**:
+  ```
+  {{2, 5, 3, 4},
+   {7, 4, 6, 1},
+   {5, 3, 2, 3}}
+  ```
+
+Il risultato sarà:
+```
+Riga 0: ciaoabctest
+Riga 1: stringalungaok
+Riga 2: helloprova
+```
+
+---
+
+## Funzioni Utilizzate
+
+### concatenazione_stringhe
+```c
+char** concatenazione_stringhe(char* A[n][m], short B[n][m]) {
+    char** array = malloc(sizeof(char*) * n);
+
+    for (int i = 0; i < n; i++) {
+        int max_len = 0;
+        for (int j = 0; j < m; j++) {
+            if (strlen(A[i][j]) >= B[i][j]) {
+                max_len += strlen(A[i][j]);
+            }
+        }
+
+        array[i] = malloc(max_len + 1);
+        array[i][0] = '\0';
+
+        for (int j = 0; j < m; j++) {
+            if (strlen(A[i][j]) >= B[i][j]) {
+                strcat(array[i], A[i][j]);
+            }
+        }
+    }
+
+    return array;
+}
+```
+
+---
+
+## Note
+1. **Funzioni Standard Usate**:
+   - `strlen()`: Per calcolare la lunghezza di una stringa.
+   - `strcat()`: Per concatenare stringhe.
+2. **Allocazione Dinamica**:
+   - La memoria per ogni elemento del risultato viene allocata dinamicamente.
+   - È importante liberare la memoria allocata una volta che non serve più.
+3. **Assenza di Controlli di Errore**:
+   - Non sono stati implementati controlli per verificare che la matrice \( A \) e la matrice \( B \) siano valide (dimensioni corrette, presenza di valori nulli, ecc.).
+   - Questi controlli dovrebbero essere aggiunti in un'applicazione reale.
+
+---
+
+
 
 
 ## Conclusioni
