@@ -1,5 +1,5 @@
 
-# Esercizi in C 
+# Esempi Funzioni/Stringhe/array&Matrici in C
 
 Questo repository contiene  esercizi di programmazione in C che lavorano con matrici di stringhe,funzioni,puntatori,allocazioni. Di seguito vengono descritti gli esercizi e l'idea dietro ciascuno.
 
