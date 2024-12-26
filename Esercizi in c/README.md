@@ -3,7 +3,8 @@
 
 Questo repository contiene  esercizi di programmazione in C che lavorano con matrici di stringhe,funzioni,puntatori,allocazioni. Di seguito vengono descritti gli esercizi e l'idea dietro ciascuno.
 
-## ATTENZIONE: prima di vedere come sono stati svolti gli esercizi, provate a farli da voi o per lo meno di sviluppare una logica dietro l'esercizio. Comprendete il codice ma soprattutto la logica che c'è dietro
+## ATTENZIONE: prima di vedere come sono stati svolti gli esercizi, provate a farli da voi o per lo meno di sviluppare una logica dietro l'esercizio. Comprendete il codice ma soprattutto la logica che c'è dietro.
+Ogni codice sarà commentato con spiegazioni sulle varie linee di codice; qui nel README troverete solo versioni grezze senza commenti.
 
 ## Esercizio 1: Verifica della presenza di una colonna con lo stesso numero di stringhe palindrome di una riga
 
@@ -757,14 +758,15 @@ char** concatenazione_stringhe(char* A[n][m], short B[n][m]) {
     char** array = malloc(sizeof(char*) * n);
 
     for (int i = 0; i < n; i++) {
-        int max_len = 0;
+         //per riuscire ad allocare con successo dobbiamo prima capire qual'è la massima dimensione che possiamo trovare             come concatenazione di stringhe per quella colonna(Senza questa parte di codice,strcat potrebbe poratre a problemi)
+        int lunghezza_massima = 0;
         for (int j = 0; j < m; j++) {
             if (strlen(A[i][j]) >= B[i][j]) {
-                max_len += strlen(A[i][j]);
+                lunghezza_massima += strlen(A[i][j]);
             }
         }
-
-        array[i] = malloc(max_len + 1);
+       // finiamo di allocare (ricordando che stiamo allocando un array di puntatori a caratteri)
+        array[i] = malloc(lunghezza_massima + 1);//Importante ricordarsi di aggiungere +1 per il carattere nullo.
         array[i][0] = '\0';
 
         for (int j = 0; j < m; j++) {
@@ -787,9 +789,7 @@ char** concatenazione_stringhe(char* A[n][m], short B[n][m]) {
 2. **Allocazione Dinamica**:
    - La memoria per ogni elemento del risultato viene allocata dinamicamente.
    - È importante liberare la memoria allocata una volta che non serve più.
-3. **Assenza di Controlli di Errore**:
-   - Non sono stati implementati controlli per verificare che la matrice \( A \) e la matrice \( B \) siano valide (dimensioni corrette, presenza di valori nulli, ecc.).
-   - Questi controlli dovrebbero essere aggiunti in un'applicazione reale.
+
 
 ---
 
