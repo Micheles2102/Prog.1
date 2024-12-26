@@ -922,7 +922,118 @@ short* inizio_fine_stringa(char* S[n][m], char C[n], char D[n]) {
 ---
 
 
+# Trova Colonna con Maggiori Corrispondenze in Matrice
 
+## Descrizione dell'Esercizio
+
+L'obiettivo di questo esercizio è scrivere una funzione in C che:
+1. Prende in input:
+   - Una matrice \( A \) di numeri `double` di dimensioni \( n \times k \).
+   - Un array \( B \) di numeri interi di dimensione \( n \).
+2. Restituisce:
+   - L'indice della colonna di \( A \) che contiene il maggior numero di elementi che, approssimati al numero intero più vicino, corrispondono ai valori nell'array \( B \).
+
+### Logica
+Per ogni colonna della matrice \( A \):
+1. Approssimare ciascun elemento di indice \( (i, j) \) al numero intero più vicino usando `round()`.
+2. Confrontare l'elemento approssimato con il valore \( B[i] \).
+3. Contare il numero di corrispondenze per ciascuna colonna.
+4. Restituire l'indice della colonna con il maggior numero di corrispondenze.
+
+---
+
+## Soluzione in C
+
+### Input:
+1. Matrice di `double` \( A \) di dimensioni \( n \times k \).
+2. Array di interi \( B \) di dimensione \( n \).
+
+### Output:
+L'indice della colonna \( j \) con il maggior numero di corrispondenze.
+
+---
+
+## Funzionamento del Codice
+
+1. **Ciclo su ogni colonna**:
+   - Itera attraverso tutte le colonne della matrice \( A \).
+   - Conta il numero di elementi che soddisfano la condizione \( \\text{round}(A[i][j]) == B[i] \).
+
+2. **Aggiornamento dell'indice**:
+   - Memorizza l'indice della colonna con il maggior numero di corrispondenze.
+
+3. **Restituzione del risultato**:
+   - L'indice della colonna con il massimo numero di corrispondenze.
+
+---
+
+## Codice
+
+### Funzione Principale: `trova_colonna_maggiore`
+```c
+int trova_colonna_maggiore(double A[n][k], int B[n]) {
+   int colonna_maggiore_numero = -1;
+   int numero_elementi_attuali;
+   int numero_elementi_precedenti = 0;
+   int numero_castato;
+
+   for (int j = 0; j < k; j++) {
+       numero_elementi_attuali = 0;
+       for (int i = 0; i < n; i++) {
+           numero_castato = (int)round(A[i][j]);
+           if (numero_castato == B[i]) {
+               numero_elementi_attuali++;
+           }
+       }
+
+       if (numero_elementi_attuali > numero_elementi_precedenti) {
+           colonna_maggiore_numero = j;
+           numero_elementi_precedenti = numero_elementi_attuali;
+       }
+   }
+
+   return colonna_maggiore_numero;
+}
+```
+# Codice del Main:
+```c
+int main() {
+    double A[n][k] = {
+        {1.2, 2.8}, 
+        {3.5, 2.3}, 
+        {4.9, 5.6}
+    };
+    int B[n] = {1, 2, 5};
+
+    int colonna_max = trova_colonna_maggiore(A, B);
+    if (colonna_max != -1) {
+        printf("La colonna con il maggior numero di corrispondenze e': %d\\n", colonna_max);
+    } else {
+        printf("Errore: indice fuori dai limiti\\n");
+    }
+
+    return 0;
+}
+```
+
+### Output:
+Per i dati di input:
+- **A**:
+  ```
+  {{1.2, 2.8},
+  {3.5, 2.3},
+  {4.9, 5.6}}
+  ```
+- **B**:
+  ```
+  {1, 2, 5}
+  ```
+
+
+Il risultato sarà:
+```
+La colonna con il maggior numero di corrispondenze e': 0
+```
 
 
 ## Conclusioni
