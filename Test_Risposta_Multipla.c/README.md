@@ -1,13 +1,13 @@
 # Repository di Test a Risposta Multipla
 
-Ciao a tutti! Questa sezione del repository è dedicata ai test a risposta multipla, progettati per aiutare a prepararsi agli esami con esempi pratici e utili. Ogni test è corredato dalle risposte corrette, per permettervi di verificare rapidamente le vostre conoscenze e approfondire i concetti meno chiari.
+Questa sezione del repository è dedicata ai test a risposta multipla, progettati per aiutare a prepararsi agli esami con esempi pratici e utili. Ogni test è corredato dalle risposte corrette, per permettervi di verificare rapidamente le vostre conoscenze e approfondire i concetti meno chiari.
 
 ## Struttura del Repository
 
 Il repository è organizzato per facilitarvi l'accesso ai materiali:
 
 - **PDF dei Test**: Ogni test è fornito in formato PDF, facilmente consultabile su qualsiasi dispositivo.
-- **Risposte Corrette**: Per ogni test sono incluse le risposte corrette, evidenziate nello stesso file con spiegazione in file separati per un confronto immediato.
+- **Risposte Corrette**: Per ogni test sono incluse le risposte corrette, evidenziate nello stesso file con spiegazione in file separati (in file .ipynb) per un confronto immediato.
 - **README.md**: Questo file introduttivo per orientarvi nell'uso della sezione dei test.
 
 ## Contenuti
