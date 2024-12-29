@@ -118,7 +118,7 @@ int main() {
 ---
 
 
-## Estensione dell'Esercizio: Struttura Annidata
+## Estensione dell'Esercizio: Inizializzazione di una Struttura con Elementi Pseudo-Casuali mediante Struttura Annidata
 In questo esercizio, estenderemo la struttura precedente creando una nuova struttura chiamata `data` che contiene:
 - Un intero `ID`.
 - Un campo di tipo `record` definito nel precedente esercizio (struttura annidata).
