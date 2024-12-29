@@ -70,11 +70,10 @@ Questa cartella contiene diversi esercizi di programmazione di base in C:
 *   `README.md`: Spiegazione delle diverse tecniche di inizializzazione e dell'uso delle strutture.
 *    `Test di programmazione 1 - [3 Febbraio 2023] [Canale A-E].pdf` : pdf del test
 *    `Test di programmazione 1 - [3 Febbraio 2023] [Canale A-E].ipynb `: soluzione del test
-## Come Compilare ed Eseguire
 
-Per compilare i file C, utilizzare un compilatore C (come GCC). Ad esempio:
 ### Soluzione_Esami_Laboratorio in c
 * `Soluzione esame 25/12/2023`
 
+### Come Compilare
 ```bash
 gcc -o nome_eseguibile nome_file.c
