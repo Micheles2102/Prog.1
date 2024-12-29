@@ -73,6 +73,8 @@ Questa cartella contiene diversi esercizi di programmazione di base in C:
 ## Come Compilare ed Eseguire
 
 Per compilare i file C, utilizzare un compilatore C (come GCC). Ad esempio:
+### Soluzione_Esami_Laboratorio in c
+* `Soluzione esame 25/12/2023`
 
 ```bash
 gcc -o nome_eseguibile nome_file.c
