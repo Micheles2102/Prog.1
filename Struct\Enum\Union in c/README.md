@@ -1,9 +1,10 @@
-# Inizializzazione di una Struttura con Elementi Pseudo-Casuali in C
+# Esercizi su struct/enum/union in C
+Questo repository contiene esercizi di programmazione in C che esplorano l'utilizzo di struct, enum e union. Di seguito vengono descritti gli esercizi e l'idea dietro ciascuno.
 
-Questo repository contiene un esempio di codice in linguaggio C che illustra come inizializzare una struttura utilizzando dati pseudo-casuali. L'esempio mostra anche l'uso di puntatori, allocazione dinamica e funzioni per manipolare i dati della struttura.
+## ATTENZIONE: prima di vedere come sono stati svolti gli esercizi, provate a farli da voi o per lo meno a sviluppare una logica dietro l'esercizio. Comprendete il codice ma soprattutto la logica che c'è dietro.
+Ogni codice sarà commentato con spiegazioni sulle varie linee di codice; qui nel README troverete solo versioni "grezze" senza commenti (ma con eventuali correzioni essenziali).
 
----
-
+## Inizializzazione di una Struttura con Elementi Pseudo-Casuali in C
 ## Dettagli del Codice
 
 ### Descrizione dell'Esercizio
