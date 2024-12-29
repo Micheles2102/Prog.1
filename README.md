@@ -66,9 +66,10 @@ Questa cartella contiene diversi esercizi di programmazione di base in C:
 *   `initializing_struct_with_function2.0.c`: Variante dell'esempio precedente.
 *   `initializing_struct_with_function3.0.c`: Ulteriore variante.
 *   `initializing_struct_with_function4.0.c`: Un'altra variante ancora.
-*   `Test_risposta_multipla.c`: Esempio di test a risposta multipla implementato con strutture.
+### Esempio di test a risposta multipla con Soluzione.
 *   `README.md`: Spiegazione delle diverse tecniche di inizializzazione e dell'uso delle strutture.
-
+*    `Test di programmazione 1 - [3 Febbraio 2023] [Canale A-E].pdf` : pdf del test
+*    `Test di programmazione 1 - [3 Febbraio 2023] [Canale A-E].ipynb `: soluzione del test
 ## Come Compilare ed Eseguire
 
 Per compilare i file C, utilizzare un compilatore C (come GCC). Ad esempio:
