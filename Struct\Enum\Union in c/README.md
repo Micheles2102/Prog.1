@@ -381,7 +381,7 @@ Il programma definisce una struttura data con un campo FLAG di tipo enumerato (e
 La funzione inizializzazioneData prende un puntatore a data e inizializza i valori di x, c, S e W. In seguito, confronta il numero di vocali in S con i numeri divisibili per tre in W, assegnando il valore appropriato al campo FLAG.
 La funzione main crea un array di data, inizializza i primi k elementi e stampa il risultato.
 
-# Estensione dell'Esercizio con Implementazione di una Union per FLAG_DATA
+## Estensione dell'Esercizio: Inizializzazione di una Struttura con Elementi Pseudo-Casuali mediante Struttura Annidata e Unione per FLAG_DATA
 
 Questo progetto estende un programma che gestisce una struttura dati `Data`, aggiungendo una **union** per memorizzare due tipi di dati diversi all'interno dello stesso campo. Il programma esegue la gestione di flag per determinare se la struttura `Data` debba contenere la prima vocale di una stringa o il primo numero divisibile per tre da un'altra stringa numerica.
 
