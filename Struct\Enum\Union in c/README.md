@@ -110,19 +110,3 @@ int main() {
   Il seed di `rand` può essere inizializzato con un valore fisso per ottenere sempre la stessa sequenza di numeri casuali (ad esempio, durante il debug).
 
 ---
-
-## Compilazione e Esecuzione
-
-### Compilazione
-Per compilare il codice, utilizzare il seguente comando:
-```bash
-gcc -o struttura_random struttura_random.c
-```
-
-### Esecuzione
-Eseguire il programma compilato:
-```bash
-./struttura_random
-```
-
----
