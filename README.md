@@ -1,72 +1,77 @@
-# Repository di Esercizi di Programmazione in C
+# Raccolta di Esercizi e Concetti Fondamentali in C
 
-Questo repository è pensato per aiutare a migliorare nella programmazione in C, con esercizi mirati su concetti fondamentali del corso di Programmazione 1. Troverete esempi pratici e spiegazioni dettagliate su funzioni, stringhe, array, matrici, puntatori e allocazione dinamica della memoria.
+Questa repository contiene una raccolta di esercizi e implementazioni in linguaggio C che coprono diversi argomenti fondamentali, tra cui allocazione dinamica, gestione di file, puntatori, strutture, unioni, enumerazioni e altro ancora.
 
-## Struttura del Repository
+## Struttura della Repository
 
-Il repository è organizzato in modo semplice e intuitivo:
+La repository è organizzata in cartelle tematiche per una migliore navigazione:
 
-- **Allocazioni.c**: Gestione dinamica della memoria (allocazione statica, automatica e   
-   dinamica con malloc, calloc, realloc, free).
-- **Funzioni.c**: Studio approfondito delle funzioni: definizione, prototipi, parametri (per 
-    valore e per riferimento), passaggio di array.
-- **Puntatori.c**:Guida completa ai puntatori: dichiarazione, inizializzazione, 
-     dereferenziazione, aritmetica dei puntatori, puntatori a costanti e puntatori costanti.
-- **Esercizi.c**: Tutti gli esercizi implementati in un unico file.
-- **README.md**: Questo file introduttivo per orientarvi nel repository.
-- Ogni esercizio ha anche una propria descrizione dettagliata.
+*   **Allocazioni con file:** Esempi di allocazione dinamica della memoria e interazione con i file.
+*   **Funzioni con file:** Esempi di definizione, prototipazione e implementazione di funzioni, con gestione dei file.
+*   **Puntatori con file:** Esercizi sull'utilizzo dei puntatori, con esempi che coinvolgono operazioni su file.
+*   **Struct/Union/enum con file:** Implementazioni che mostrano l'uso di strutture, unioni ed enumerazioni, con esempi di lettura e scrittura da file.
+*   **Esercizi:** Una raccolta di esercizi di programmazione di base in C.
+*   **Esercizio_sui_file:** Un esercizio specifico sulla gestione di matrici e file, con calcolo della trasposta.
+*   **Struct\Enum\Union in c:** Ulteriori esempi sull'uso di strutture, unioni ed enumerazioni, con diverse tecniche di inizializzazione.
 
-## Elenco degli Esercizi
+## Descrizione delle Cartelle
 
-Ecco gli esercizi attualmente disponibili, con una breve descrizione di ciò che fanno:
+### Allocazioni con file
 
-1. **Verifica di una colonna con lo stesso numero di stringhe palindrome di una riga**  
-   Controlla se in una matrice di stringhe esiste una colonna con lo stesso numero di stringhe palindrome di una riga.
+*   `allocazioni.c`: Codice sorgente con esempi di allocazione dinamica (malloc, calloc, realloc, free) e operazioni di lettura/scrittura su file.
+*   `README.md`: Descrizione degli esempi e istruzioni per la compilazione e l'esecuzione.
 
-2. **Calcolo della percentuale di caratteri di un array in una matrice**  
-   Calcola la percentuale di caratteri di un array presenti in una matrice di stringhe e verifica se supera una soglia specificata.
+### Funzioni con file
 
-3. **Rapporto tra somme di righe di A e prodotti di colonne di B**  
-   Determina il rapporto tra la somma degli elementi delle righe di una matrice A e il prodotto degli elementi delle colonne di una matrice B.
+*   `definizioni.c`: Contiene le definizioni delle funzioni.
+*   `prototipi.h`: Contiene i prototipi delle funzioni.
+*   `funzioni.c`: Implementazione delle funzioni, con esempi di utilizzo e gestione dei file.
+*   `README.md`: Spiegazione delle funzioni implementate e come utilizzarle.
 
-4. **Media aritmetica tra una matrice di interi e una di double**  
-   Calcola la media aritmetica degli elementi comuni tra una matrice di interi e una di double, arrotondando i valori della matrice double all'intero più vicino.
+### Puntatori con file
 
-5. **Verifica di righe e colonne con stringhe brevi**  
-   Controlla se in una matrice ci sono almeno un certo numero di stringhe più corte di un valore specificato, sia in almeno una riga che in almeno una colonna.
+*   `puntatori.c`: Esempi di utilizzo dei puntatori, con operazioni su file (es. lettura/scrittura di dati tramite puntatori).
+*   `README.md`: Descrizione degli esempi e del funzionamento dei puntatori.
 
-6. **Ricerca di sequenze monotone crescenti in una matrice**  
-   Trova sequenze monotone crescenti di una data lunghezza minima nelle colonne di una matrice.
+### Struct/Union/enum con file
 
-7. **Ricerca di stringhe in una matrice**  
-   Verifica se in una matrice esistono almeno due stringhe diverse che contengono una stringa specifica, con indici di riga e colonna differenti.
+*   `struct_enum_union.c`: Codice che mostra l'uso di struct, enum e union, con esempi di serializzazione su file.
+*   `README.md`: Spiegazione delle strutture dati e come vengono utilizzate con i file.
 
-8. **Concatenazione di stringhe in una matrice basata su lunghezze**  
-   Concatena le stringhe di ogni riga di una matrice, considerando solo quelle con lunghezza maggiore o uguale a un valore specificato in un'altra matrice.
+### Esercizi
 
-9. **Conteggio di stringhe che iniziano e finiscono con caratteri specifici**  
-   Conta quante stringhe in ogni riga iniziano e terminano con caratteri dati da due array.
+Questa cartella contiene diversi esercizi di programmazione di base in C:
 
-10. **Trova la colonna con più corrispondenze in una matrice**  
-    Identifica la colonna in una matrice di double che ha il maggior numero di elementi che, approssimati all'intero più vicino, corrispondono ai valori di un array di interi.
+*   `Concatenazione_Stringhe.c`: Esempio di concatenazione di stringhe.
+*   `Inizio_fine_stringa.c`: Esercizi sull'individuazione dell'inizio e della fine di una stringa.
+*   `Media_Aritmetica.c`: Calcolo della media aritmetica.
+*   `Percentuale.c`: Calcolo di percentuali.
+*   `Rapporto.c`: Calcolo di rapporti.
+*   `Sequenza_Monotona.c`: Verifica se una sequenza è monotona (crescente o decrescente).
+*   `Stringa_contenuta.c`: Verifica se una stringa è contenuta in un'altra.
+*   `Trova_colonna_maggiore.c`: Trova la colonna con la somma maggiore in una matrice.
+*   `palindrome.c`: Verifica se una stringa è palindroma.
+*   `string_length_checker.c`: Verifica la lunghezza di una stringa.
+*   `README.md`: Descrizione degli esercizi.
 
-## Come Utilizzare il Repository
+### Esercizio\_sui\_file
 
-Ogni esercizio è corredato da:
+*   `file_matrice_trasposta.c`: Esercizio che legge una matrice da file, ne calcola la trasposta e la salva su un altro file.
+*   `matrice.txt`: File di esempio contenente una matrice.
+*   `README.md`: Descrizione dell'esercizio e del formato del file `matrice.txt`.
 
-- **Descrizione**: Dettagli sul problema da risolvere.
-- **Dettagli tecnici**: Specifiche sugli input e sugli output attesi.
-- **Soluzione**: Spiegazione della logica e dell'algoritmo usato.
-- **Codice**: Implementazione C commentata e facile da seguire.
-- **Esempio**: Un caso pratico per testare il codice.
+### Struct\Enum\Union in c
 
-### Consigli per lo Studio
+*   `initializing_struct_with_function.c`: Esempio di inizializzazione di una struttura con una funzione.
+*   `initializing_struct_with_function2.0.c`: Variante dell'esempio precedente.
+*   `initializing_struct_with_function3.0.c`: Ulteriore variante.
+*   `initializing_struct_with_function4.0.c`: Un'altra variante ancora.
+*   `Test_risposta_multipla.c`: Esempio di test a risposta multipla implementato con strutture.
+*   `README.md`: Spiegazione delle diverse tecniche di inizializzazione e dell'uso delle strutture.
 
-1. **Leggete le descrizioni degli esercizi** prima di guardare il codice.
-2. **Provate a risolverli autonomamente**, anche solo a livello teorico.
-3. Usate il codice implementato come riferimento o confronto.
+## Come Compilare ed Eseguire
 
-Il repository è pensato per essere una risorsa pratica e un supporto per migliorare le competenze di programmazione. Spero vi sia utile per prepararvi agli esami e affrontare esercitazioni o progetti!
+Per compilare i file C, utilizzare un compilatore C (come GCC). Ad esempio:
 
-Buono studio e buona programmazione! :)
-
+```bash
+gcc -o nome_eseguibile nome_file.c
