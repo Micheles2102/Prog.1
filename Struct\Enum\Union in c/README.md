@@ -1,3 +1,10 @@
+# Esempi Struct/Enum/Union in c
+Questo repository contiene  esercizi di programmazione in C che lavorano con struct,enum,union,puntatori,allocazioni. Di seguito vengono descritti gli esercizi e l'idea dietro ciascuno.
+
+## ATTENZIONE: prima di vedere come sono stati svolti gli esercizi, provate a farli da voi o per lo meno di sviluppare una logica dietro l'esercizio. Comprendete il codice ma soprattutto la logica che c'è dietro.
+Ogni codice sarà commentato con spiegazioni sulle varie linee di codice; qui nel README troverete solo versioni grezze senza commenti.
+
+
 # Inizializzazione di una Struttura con Elementi Pseudo-Casuali in C
 
 Questo repository contiene un esempio di codice in linguaggio C che illustra come inizializzare una struttura utilizzando dati pseudo-casuali. L'esempio mostra anche l'uso di puntatori, allocazione dinamica e funzioni per manipolare i dati della struttura.
