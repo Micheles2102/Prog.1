@@ -110,3 +110,41 @@ Eseguire il programma con:
 - Prestare attenzione alla gestione della memoria dinamica (eseguire sempre il controllo del puntatore).
 - Utilizzare gli enum per aumentare la leggibilità del codice e ridurre gli errori.
 - Le union devono essere utilizzate con cautela per evitare problemi legati alla sovrascrittura dei dati.
+
+
+## Estensione dell'Esercizio: Struttura Annidata
+In questo esercizio, estenderemo la struttura precedente creando una nuova struttura chiamata `data` che contiene:
+- Un intero `ID`.
+- Un campo di tipo `record` definito nel precedente esercizio (struttura annidata).
+
+### Dettagli del Codice
+
+L'esercizio prevede di:
+- Inizializzare l'array di strutture `data`, con un numero `k` di elementi inizializzati e il resto degli elementi con `ID = -1`.
+- Ogni elemento di tipo `data` ha un ID univoco, e per ogni elemento, viene inizializzato il campo `RecordPrincipale` utilizzando la funzione di inizializzazione del primo esercizio.
+
+### Codice
+
+```c
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+#define N 5
+#define k 3
+
+struct record {
+    float x;
+    char c;
+    char* S;
+    char* W;
+};
+
+void inizializzazione(struct record *ptr) {
+    ptr->x = (float) rand() / RAND_MAX * 7.0; // Numero casuale tra 0.0 e 7.0
+    ptr->c = rand() % 26 + 'a'; // Carattere casuale tra 'a' e 'z'
+
+    // Allocazione dinamica per la stringa W
+    ptr->W = (char*) malloc(3 * sizeof(char));
+    ptr->W[0] = (rand() % 10) + '0';
+    ptr->W[1] = (rand() % 10) + '0';
+    ptr->W[2] = '
