@@ -380,3 +380,216 @@ int main (){
 Il programma definisce una struttura data con un campo FLAG di tipo enumerato (enum nome), che può essere VOWELS o THREE.
 La funzione inizializzazioneData prende un puntatore a data e inizializza i valori di x, c, S e W. In seguito, confronta il numero di vocali in S con i numeri divisibili per tre in W, assegnando il valore appropriato al campo FLAG.
 La funzione main crea un array di data, inizializza i primi k elementi e stampa il risultato.
+
+# Estensione dell'Esercizio con Implementazione di una Union per FLAG_DATA
+
+Questo progetto estende un programma che gestisce una struttura dati `Data`, aggiungendo una **union** per memorizzare due tipi di dati diversi all'interno dello stesso campo. Il programma esegue la gestione di flag per determinare se la struttura `Data` debba contenere la prima vocale di una stringa o il primo numero divisibile per tre da un'altra stringa numerica.
+
+## Struttura del Codice
+
+### 1. **Struttura `record`**
+
+La struttura `record` contiene i seguenti campi:
+- `x` (float): Un numero casuale tra 0.0 e 7.0.
+- `c` (char): Un carattere casuale tra 'a' e 'z'.
+- `S` (char*): Una stringa di 2 caratteri alfabetici casuali.
+- `W` (char*): Una stringa di 2 numeri casuali.
+
+### 2. **Enumerazione `nome`**
+
+L'enumerazione `nome` definisce due valori:
+- `VOWELS`: Indica che il campo `FLAG_DATA` contiene una vocale.
+- `THREE`: Indica che il campo `FLAG_DATA` contiene un numero divisibile per 3.
+
+### 3. **Union `nome2`**
+
+La **union** `nome2` può contenere due tipi di dati:
+- `t` (unsigned short): Un numero intero.
+- `q` (char): Un carattere.
+
+### 4. **Tipo `Data`**
+
+La struttura `Data` contiene i seguenti campi:
+- `ID` (int): Un identificativo per la struttura.
+- `RecordPrincipale` (struct record): Una variabile di tipo `record`.
+- `FLAG` (enum nome): Un flag che può essere `VOWELS` o `THREE`.
+- `FLAG_DATA` (union nome2): Contiene una vocale o un numero divisibile per 3, in base al valore di `FLAG`.
+
+### 5. **Funzioni**
+
+#### `inizializzazione(struct record *ptr)`
+
+Questa funzione inizializza i campi della struttura `record`:
+- `x`: Un numero casuale tra 0.0 e 7.0.
+- `c`: Un carattere casuale tra 'a' e 'z'.
+- `W`: Una stringa di due numeri casuali.
+- `S`: Una stringa di due caratteri alfabetici casuali.
+
+#### `inizializzazioneData(struct data *ptr, int i)`
+
+Questa funzione inizializza la struttura `Data`:
+- Imposta l'ID della struttura a `i`.
+- Chiama la funzione `inizializzazione` per inizializzare i campi di `RecordPrincipale`.
+- Conta il numero di vocali in `S` e il numero di numeri divisibili per 3 in `W`.
+- Se il numero di vocali è maggiore di quello dei numeri divisibili per 3, imposta `FLAG` a `VOWELS` e `FLAG_DATA` con la prima vocale.
+- Se il numero di numeri divisibili per 3 è maggiore, imposta `FLAG` a `THREE` e `FLAG_DATA` con il primo numero divisibile per 3.
+
+#### `main()`
+
+La funzione `main` gestisce l'array di strutture `Data`:
+- Chiama `inizializzazioneData` per inizializzare le prime `k` strutture.
+- Per le restanti strutture, imposta l'ID a `-1`, indicando che non sono inizializzate.
+- Stampa il contenuto dell'array, mostrando i valori di `ID`, `x`, `c`, `S`, `W`, `FLAG` e `FLAG_DATA`.
+
+### 6. **Output**
+
+L'output del programma visualizza per ogni elemento dell'array:
+- `ID`: L'identificativo dell'elemento.
+- `x`: Il numero casuale generato.
+- `c`: Il carattere casuale generato.
+- `W`: La stringa numerica generata.
+- `S`: La stringa alfabetica generata.
+- `FLAG`: Mostra "VOWELS" o "THREE" a seconda del flag.
+- `FLAG_DATA`: Se il flag è `VOWELS`, mostra la prima vocale trovata. Se il flag è `THREE`, mostra il primo numero divisibile per 3. Se non ci sono numeri divisibili per 3, mostra un messaggio che indica l'assenza di numeri divisibili per 3.
+
+### 7. **Gestione della Memoria**
+
+Il programma alloca dinamicamente la memoria per le stringhe `S` e `W` utilizzando `malloc` e la libera alla fine del programma con `free`.
+
+### 8. **Codice Completo**
+
+```c
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+#include <string.h>
+#define N 5
+#define k 3
+
+struct record {
+    float x;
+    char c;
+    char* S;
+    char* W;
+};
+
+enum nome {
+    VOWELS,
+    THREE,
+};
+
+union nome2 {
+    unsigned short t;
+    char q;
+};
+
+typedef struct data {
+    int ID;
+    struct record RecordPrincipale;
+    enum nome FLAG;
+    union nome2 FLAG_DATA;
+} Data;
+
+void inizializzazione(struct record *ptr) {
+    ptr->x = (float) rand() / RAND_MAX * 7.0; // Numero casuale tra 0.0 e 7.0
+    ptr->c = rand() % 26 + 'a';
+    
+    // Allocazione dinamica per W
+    ptr->W = (char*) malloc(3 * sizeof(char));
+    ptr->W[0] = (rand() % 10) + '0';
+    ptr->W[1] = (rand() % 9) + '0';
+    ptr->W[2] = '\0'; // Terminatore di stringa
+
+    // Allocazione dinamica per S
+    ptr->S = (char*) malloc(3 * sizeof(char));
+    ptr->S[0] = (rand() % 26) + 'a';
+    ptr->S[1] = (rand() % 27) + 'a';
+    ptr->S[2] = '\0'; // Terminatore di stringa
+}
+
+void inizializzazioneData(struct data *ptr, int i) {
+    ptr->ID = i;
+    inizializzazione(&ptr->RecordPrincipale);
+    int elementi_divisibili = 0;
+    unsigned short primo_numero_divisibile = 2; // Inizializzato a 2 per segnalare assenza di numeri divisibili per 3
+    
+    for (int i = 0; i < strlen(ptr->RecordPrincipale.W); i++) {
+        if ((ptr->RecordPrincipale.W[i] - '0') % 3 == 0) {
+            if (primo_numero_divisibile == 2) {
+                primo_numero_divisibile = ptr->RecordPrincipale.W[i] - '0';
+            }
+            elementi_divisibili++;
+        }
+    }
+
+    int contatore = 0;
+    char prima_vocale = '\0';
+    for (int i = 0; i < strlen(ptr->RecordPrincipale.S); i++) {
+        char c = ptr->RecordPrincipale.S[i];
+        switch (c) {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+                contatore++;
+                if (prima_vocale == '\0') prima_vocale = c;
+                break;
+            default:
+                break;
+        }
+    }
+
+    if (contatore > elementi_divisibili) {
+        ptr->FLAG = VOWELS;
+        ptr->FLAG_DATA.q = prima_vocale;
+    } else {
+        ptr->FLAG = THREE;
+        ptr->FLAG_DATA.t = primo_numero_divisibile;
+    }
+}
+
+int main() {
+    srand(time(0));
+
+    Data array[N];
+
+    for (int i = 0; i < k; i++) {
+        inizializzazioneData(&array[i], i);
+    }
+    for (int i = k; i < N; i++) {
+        inizializzazioneData(&array[i], -1);
+    }
+
+    // Stampa dell'array
+    for (int i = 0; i < N; i++) {
+        printf("Elemento %d: ID = %d, ", i, array[i].ID);
+        if (array[i].ID != -1) {
+            printf("x = %f, c = %c, W = %s, S = %s, FLAG = %s, FLAG_DATA = ",
+                   array[i].RecordPrincipale.x, array[i].RecordPrincipale.c,
+                   array[i].RecordPrincipale.W, array[i].RecordPrincipale.S,
+                   array[i].FLAG == VOWELS ? "VOWELS" : "THREE");
+
+            if (array[i].FLAG == VOWELS) {
+                printf("%c\n", array[i].FLAG_DATA.q); // Stampa la vocale
+            } else {
+                if (array[i].FLAG_DATA.t == 2) {
+                    printf("(Nessun elemento divisibile per tre)\n");
+                } else {
+                    printf("%d\n", array[i].FLAG_DATA.t); // Stampa il numero
+                }
+            }
+        } else {
+            printf("(Elemento non inizializzato)\n");
+        }
+    }
+
+    // Libera la memoria allocata
+    for (int i = 0; i < k; i++) {
+        free(array[i].RecordPrincipale.W);
+        free(array[i].RecordPrincipale.S);
+    }
+
+    return 0;
+}
+
