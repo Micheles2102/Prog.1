@@ -25,8 +25,8 @@ int aggiungi_senza_reference(int x, int y) {
 }
 
 // Funzione per stampare un array monodimensionale
-void stampa_array(int* v, int n) { // Posso dichiarare v anche come int v[]
-    for (int i = 0; i < n; i++) {
+void stampa_array(int* v,int t) { // Posso dichiarare v anche come int v[]
+    for (int i = 0; i < t; i++) {
         printf("Il valore in posizione %d di v è: %d\n", i, v[i]); // Accesso all'array tramite indicizzazione
     }
 }
@@ -85,7 +85,7 @@ int main(int argc, char* argv[]) {
 
     // Passaggio di un array a una funzione
     int array[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}; // Inizializzazione
-    stampa_array(array, 10); // Stampa l'array
+    stampa_array(array,10); // Stampa l'array
 
     // Esempio con matrici
     int matrice[5][5];
