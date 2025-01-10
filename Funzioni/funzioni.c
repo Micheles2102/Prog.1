@@ -34,7 +34,7 @@ void stampa_array(int* v,int t) { // Posso dichiarare v anche come int v[]
  
 
 // Funzione per costruire un array di puntatori a interi
-void costruisci_array(int *v[m], int N) {
+void costruisci_array(int** v, int N) {
     printf("Funzione costruisci_array: array di puntatori a int\n");
     for (int i = 0; i < N; i++) {
         v[i] = NULL; // Inizializza i puntatori a NULL
@@ -86,7 +86,9 @@ int main(int argc, char* argv[]) {
     // Passaggio di un array a una funzione
     int array[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}; // Inizializzazione
     stampa_array(array,10); // Stampa l'array
-
+    //creazione array di puntatori
+    int *v[m];
+    costruisci_array(v, m);
     // Esempio con matrici
     int matrice[5][5];
     printf("\nInizializzazione di una matrice 5x5:\n");
