@@ -34,10 +34,11 @@ void stampa_array(int* v,int t) { // Posso dichiarare v anche come int v[]
  
 
 // Funzione per costruire un array di puntatori a interi
-void costruisci_array(int** v, int N) {
+void costruisci_array(int** v, int N) { //or int* v[m]
     printf("Funzione costruisci_array: array di puntatori a int\n");
     for (int i = 0; i < N; i++) {
         v[i] = NULL; // Inizializza i puntatori a NULL
+        printf("Il valore in posizione %d di v e': %d\n\n", i, v[i]);
     }
 }
 
