@@ -93,7 +93,7 @@ int main(int argc, char* argv[]) {
     costruisci_array(v, m);
     // Esempio con matrici
     int matrice[5][5];
-    printf("Iniziallizzazione di una matrice 5x4:\n");
+    printf("Iniziallizzazione di una matrice 5x5:\n");
     costruisci_matrice( 5,matrice); //inizializza e stampa la matrice
 
 
