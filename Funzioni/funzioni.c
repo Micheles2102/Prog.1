@@ -42,13 +42,14 @@ void costruisci_array(int** v, int N) { //or int* v[m]
     }
 }
 
-// Funzione per costruire una matrice (array bidimensionale)
-void costruisci_matrice(int (*v)[m], int N) {
-    printf("Funzione costruisci_matrice: matrice di interi %dx%d\n", N, m);
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < m; j++) {
-            v[i][j] = i * m + j; // Inizializza ogni elemento della matrice con un valore unico
-            printf("v[%d][%d] = %d\n", i, j, v[i][j]);
+
+// funzione per costruire una matrice (array bidimensionale)
+void costruisci_matrice(int N,int (*v)[N]){
+    printf("Funzione costruisci_matrice: matrice di interi %d %d\n", N, N);
+    for(int i=0; i<N; i++){
+        for(int j=0; j<N; j++){
+            v[i][j]=i*N+j;
+            printf("v[%d][%d]= %d\n\n", i, j, v[i][j]);
         }
     }
 }
@@ -92,8 +93,9 @@ int main(int argc, char* argv[]) {
     costruisci_array(v, m);
     // Esempio con matrici
     int matrice[5][5];
-    printf("\nInizializzazione di una matrice 5x5:\n");
-    costruisci_matrice(matrice, 5); // Inizializza e stampa la matrice
+    printf("Iniziallizzazione di una matrice 5x4:\n");
+    costruisci_matrice( 5,matrice); //inizializza e stampa la matrice
+
 
     // Matrice con dimensioni definite
     int matrice2[n][m];
