@@ -11,7 +11,6 @@ i-esima di B.
 
 #include <stdio.h>
 #include <stdbool.h>
-#include <string.h>
 #include <stdlib.h>
 
 #define n 3
