@@ -14,23 +14,6 @@ esempio:
 (int) round(0.60)--> avviene round(0.60)=1.00 --> che col cast (int)1.00 ritorna 1
 
 */
-
-/* Esercizio:
-Codificare una funzione in C che prenda in input un parametro
-formale matrice A di interi di dimensioni n × m di elementi distinti ed
-una matrice B di double di dimensioni k × n, e restituisca un array di
-n interi nel quale lo i-esimo elemento sia uguale alla media
-aritmetica degli elementi presenti sia nella riga i-esima di A che
-nella colonna i-esima di B. NB: per decidere se un elemento int
-della matrice A `e uguale ad un elemento double della matrice B si
-calcoli l’approssimazione all’intero pi`u vicino di quest’ultimo.
-
-Note: 
-Per arrotondare si utilizza la funzione round che è presente in math.h, ma poi bisogna castare ad int in quanto quest'ultimo ritorna un double:
-esempio:
-(int) round(0.60)--> avviene round(0.60)=1.00 --> che col cast (int)1.00 ritorna 1
-
-*/
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
