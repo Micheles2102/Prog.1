@@ -17,20 +17,22 @@ Per risolvere in maniera veloce il problema basta che ci si ricorda della funzio
 #define n 3
 #define m 4
 
-bool stringa_contenuta(char* A[n][m],char* s){
-    int stringhe_trovate=0;
-    int riga,colonna=-1;//devo inizializzarli a -1 per evitare problemi dentro all'if
-    for(int i=0;i<n;i++){
-        for(int j=0;j<m;j++){
-            if((strstr(A[i][j],s)!= NULL )){ // se ritorna 1 ha trovato una sottostringa : strstr( stringa dove cercare,stringa da cercare)
-                stringhe_trovate++;
-                riga=i;
-                colonna=j;
-                break;
+bool stringa_contenuta(char* A[n][m], char* s) {
+    for (int i1 = 0; i1 < n; i1++) {
+        for (int j1 = 0; j1 < m; j1++) {
+            if (strstr(A[i1][j1], s) != NULL) { // Prima stringa trovata. se ritorna 1 ha trovato una sottostringa : strstr( stringa dove cercare,stringa da cercare)
+                for (int i2 = 0; i2 < n; i2++) {
+                    for (int j2 = 0; j2 < m; j2++) {
+                        if ((i1 != i2 || j1 != j2) && strstr(A[i2][j2], s) != NULL) {// se ritorna 1 ha trovato una sottostringa : strstr( stringa dove cercare,stringa da cercare)
+                            // Seconda stringa trovata in posizione diversa
+                            return true;
+                        }
+                    }
+                }
             }
         }
     }
-    return stringhe_trovate>=2;
+    return false; 
 }
 
 
