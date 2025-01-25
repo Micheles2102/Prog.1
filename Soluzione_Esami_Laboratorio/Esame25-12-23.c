@@ -1,172 +1,151 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
-#define Lunghezza_massima 20
+#include <ctype.h>
+#define MAX_LENGTH_WORD 21
+typedef struct 
+{
+    char input[11];
+    char output[11];
+}NomiFile;
 
-//creazione record
-typedef struct record{
-    char key[Lunghezza_massima+1]; //si aggiunge il +1 per il terminatore
+typedef struct
+{
+    char key[MAX_LENGTH_WORD];
     int length;
 }Record;
 
 
-// Struttura per contenere i nomi dei file
-typedef struct {
-    char input_filename[40];
-    char output_filename[40];
-} NomiFile;
+NomiFile readInput(int argc,char** argv){
 
-NomiFile readInput(int argc, char *argv[]) {
-    NomiFile filenames;
-
-    // Inizializzazione per evitare valori non definiti , memset( cosa vogliamo inizializzare, il valore da inizializzare, la lunghezza del tipo)
-    memset(&filenames, 0, sizeof(NomiFile));
-
-    if (argc != 3) {
-        fprintf(stderr, "Errore: numero di argomenti errato.\n");
-        fprintf(stderr, "Utilizzo: %s <file_input.txt> <file_output.bin>\n", argv[0]);
-        exit(EXIT_FAILURE); // Uscita con codice di errore
+    if(argc!=3){
+        perror("Errore: Numeri di parametri passati");
+        exit(1);
+    }
+    int len=strlen(argv[1]);
+    if(len<1 && strcmp(argv[1]+strlen(argv[1])-4,".txt")!=0){ //argv[1] contiene il nome,sommando la lunghezza e sottraendo 4 andiamo a fare puntare al carattere . e controllerà tutti i caratteri
+        perror("Errore: Il primo parametro passato non è un file .txt");
+        exit(2);
+    }
+    len=strlen(argv[2]);
+    if(len<1 && strcmp(argv[2]+strlen(argv[2])-4,".bin")!=0){
+        perror("Errore: Il primo parametro passato non è un file .bin");
+        exit(3);
     }
 
-    // Copia i nomi dei file nella struttura, con controllo di overflow
-    if (strlen(argv[1]) >= 40) {
-        fprintf(stderr, "Errore: nome del file di input troppo lungo.\n");
-        exit(EXIT_FAILURE);
-    }
-    strcpy(filenames.input_filename, argv[1]);
+    NomiFile nomi_dei_file;
+    strcpy(nomi_dei_file.input,argv[1]);
+    strcpy(nomi_dei_file.output,argv[2]);
 
-    if (strlen(argv[2]) >= 40) {
-        fprintf(stderr, "Errore: nome del file di output troppo lungo.\n");
-        exit(EXIT_FAILURE);
-    }
-    strcpy(filenames.output_filename, argv[2]);
-
-    return filenames;
+    return nomi_dei_file;
 }
 
-//Funzione che legge il testo contenuto nel file e crea l'array
-int buildArray(FILE *file,Record *array){
-    //siccome ora vogliamo leggere le stringhe contenute usando fgets alloco un buffer ( richiesto da fgets)
-    char buffer[Lunghezza_massima+1];
-    int parole_lette=0;
-    
-    while (fgets(buffer,sizeof(buffer),file)!= NULL){
-        //se è presente eliminiamo il carattere per andare a capo con uno di terminazione 
-        int len=strlen(buffer);
-        if(len>0 && buffer[len-1]=='\n'){
-            buffer[len - 1] = '\0';
+Record* buildArray(const char *input){
+
+    FILE *fp = fopen(input, "r");
+    if (fp == NULL) {
+        perror("Errore apertura file input");
+        exit(EXIT_FAILURE);
+    }
+
+    Record* array=(Record*) malloc(sizeof(Record)*200);
+    if(array==NULL){
+        perror("Errore durante la creazione dell'array");
+        exit(5);
+    }
+
+    int i=0;
+    while(i<200 && fscanf(fp,"%20s",array[i].key)==1){
+        array[i].length=strlen(array[i].key);
+        i++;
+    }
+
+    return array;
+}
+
+void filter(Record *array) {
+    int j = 0;
+    for (int i = 0; array->key[i] != '\0'; i++) {
+        if (!ispunct(array->key[i])) { 
+            array->key[j++] = array->key[i];
         }
-        strcpy(array[parole_lette].key,buffer);//in questa maniera copio la stringa 
-        array[parole_lette].length=strlen(buffer);//cosi copio la lunghezza (sovrascrivendo dove necessario il -1)
-        parole_lette++;
     }
-    return parole_lette;
-}
-//funzione per pulire l'array(attenzione passo elemento per elemento quindi richiamo gli elementi di array con l'operatore .)
-void filter(Record array){//ATTENZIONE vi pososno essere varie ottimizzazioni  ho cercato di prendere quella più semplice,un altra posisbilità è creare una copia della stringa e lavorare su quella
-    int i,j=0;
-    char c;//utile solo per rendere il codice più leggibile
-    for(int i=0; array.key[i]!='\0';i++){ //fino a quando non trova un carattere di terminazione (potremmo andare anche con strlen(array[i].key))
-        c=array.key[i];
-        if(c!=',' && c!=';' && c!=':' && c!='.'){array.key[j++]=array.key[i];} //"sovrascrive " il vecchio valore se risulta essere un carattere speciale
-    }
-    array.key[j]='\0';
-    array.length=strlen(array.key);
+    array->key[j] = '\0';
+    array->length = strlen(array->key);
 }
 
-void createset(Record *array,int parole_lette){// uso parole_lette per indicare quelle che hanno length diverso da -1
-    char buffer[20];
-    for(int i=0;i<parole_lette;i++){
-        strcpy(buffer,array[i].key);
-        for(int j=0;j<parole_lette;j++){
-            if(i==j){}//ovviamente togliamo il caso in cui si trova la stringa che si è utilizzata
-            else{
-                if(strcmp(buffer,array[j].key)==0){
+void createSet(Record* array){
+    for(int i=0;i<200;i++){
+        if(array[i].length!=-1){
+            for(int j=i+1;j<200;j++){
+                if(strcmp(array[i].key,array[j].key)==0){
                     array[j].length=-1;
                 }
             }
         }
     }
-    
 }
 
-void printArray(Record *array,int parole_lette){
-    for(int i=0;i<parole_lette;i++){
-        printf("%s\n",array[i].key);
-    }
-}
-
-void  save(Record *array,int parole_lette,char *nomefilebin){
-    FILE *fp = fopen(nomefilebin, "wb");
-    if (fp == NULL) {
-        perror("Errore nell'apertura del file");
-        return;
-    }
-
-    for (int i = 0; i < parole_lette; i++) {
-        if (fwrite(&array[i], sizeof(Record), 1, fp) != 1) {
-            perror("Errore durante la scrittura sul file");
-            fclose(fp);
-            return;
+void printArray(Record *array) {
+    for (int i = 0; i < 200; i++) {
+        if (array[i].length > 0) {
+            printf("%s ", array[i].key);
         }
     }
-
-    fclose(fp);
+    printf("\n"); 
 }
 
-void read(char *filebin){
-    FILE *fp = fopen(filebin, "rb");
-    if (fp == NULL) {
+void save(char* file_bin,Record* array){
+    FILE *file = fopen(file_bin, "wb");
+    if (file == NULL) {
         perror("Errore nell'apertura del file");
-        return;
+        exit(EXIT_FAILURE);
     }
 
+    for (int i = 0; i < 200; i++) {
+        if(array[i].length>0){
+            if (fwrite(&array[i], sizeof(Record), 1, file) != 1) {
+                perror("Errore durante la scrittura sul file");
+                fclose(file);
+                exit(EXIT_FAILURE);
+            }
+        }
+    }
+    fclose(file);
+}
+
+void read(const char* output){
+    FILE *fp = fopen(output, "rb"); // Apertura in lettura binaria
+    if (fp == NULL) {
+        perror("Errore nell'apertura del file binario per la lettura");
+        exit(EXIT_FAILURE);
+    }
     Record record;
     while (fread(&record, sizeof(Record), 1, fp) == 1) {
-        printf("%s\n", record.key);
+        printf("%s ", record.key);
     }
-
+    printf("\n");
     fclose(fp);
 }
 
-//prende in input : input.txt e elab.bin
 int main(int argc,char* argv[]){
 
-    NomiFile nomifile=readInput(argc,argv);  
+    NomiFile nomi_file=readInput(argc,argv);
 
-    FILE *file=fopen(nomifile.input_filename,"r");
-    if(file==NULL){
-        perror("errore nell'apertura del file");
-        return 1;
+    Record* array_dati=buildArray(nomi_file.input);
+
+    for(int i=0;i<200;i++){
+        filter(&array_dati[i]);
+        array_dati[i].length=strlen(array_dati[i].key);
     }
-
-    FILE *output_file = fopen(nomifile.output_filename, "wb"); // "wb" viene usato per scrittura binaria
-    if (output_file == NULL) {
-        perror("Errore apertura file di output");
-        fclose(file); //chiudo il file txt
-        return 1;
-    }
-
-    Record array[200];
-
-    // Inizializzo la lunghezza di tutti a -1 poi modificherò quella opportuna quando troverà una stringa
-    for (int i = 0; i < 200; i++) {
-        array[i].length = -1; 
-    }
-
-    int parole_lette=buildArray(file,array);
-
-    for(int i=0;i<parole_lette;i++){
-        filter(array[i]);
-    }
-    createset(array,parole_lette);
-
-    printArray(array,parole_lette);
-
-    save(array,parole_lette,output_file);
     
-    read(output_file);
-    fclose(file);
-    fclose(output_file);
-    return 0;
+    createSet(array_dati);
+    printArray(array_dati);
+    int parole_non_eliminate=0;
+
+    save(nomi_file.output,array_dati);
+
+    read(nomi_file.output);
+    
+    free(array_dati);
 }
