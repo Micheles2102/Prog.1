@@ -1,0 +1,11 @@
+10  
+Luca Bianchi 25 1.75  
+Giulia Rossi 30 1.68  
+Marco Verdi 28 1.80  
+Francesca Neri 35 1.65  
+Andrea Conti 22 1.78  
+Elena Moretti 27 1.70  
+Davide Rizzo 33 1.82  
+Sara Luca 26 1.60  
+Matteo Fontana 29 1.85  
+Alessia Gentile 31 1.72 

@@ -1,0 +1,6 @@
+Luca Bianchi, Eta: <25>, Altezza: <1.75>
+Marco Verdi, Eta: <28>, Altezza: <1.80>
+Andrea Conti, Eta: <22>, Altezza: <1.78>
+Davide Rizzo, Eta: <33>, Altezza: <1.82>
+Matteo Fontana, Eta: <29>, Altezza: <1.85>
+Alessia Gentile, Eta: <31>, Altezza: <1.72>
