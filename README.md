@@ -1,7 +1,7 @@
 # Raccolta di Esercizi e Concetti Fondamentali in C
 
 Questa repository contiene una raccolta di esercizi e implementazioni in linguaggio C che coprono diversi argomenti fondamentali, tra cui allocazione dinamica, gestione di file, puntatori, strutture, unioni, enumerazioni e altro ancora.
-
+Per qualsiasi dubbio sono reperibile su telegram con : @Sbracato
 ## Struttura della Repository
 
 La repository è organizzata in cartelle tematiche per una migliore navigazione:
