@@ -1,79 +1,56 @@
-# Raccolta di Esercizi e Concetti Fondamentali in C
+# 📘 Raccolta di Esercizi e Concetti Fondamentali in C
 
-Questa repository contiene una raccolta di esercizi e implementazioni in linguaggio C che coprono diversi argomenti fondamentali, tra cui allocazione dinamica, gestione di file, puntatori, strutture, unioni, enumerazioni e altro ancora.
-Per qualsiasi dubbio sono reperibile su telegram con : @Sbracato
-## Struttura della Repository
+Questa repository contiene una selezione di esercizi e implementazioni in linguaggio C, pensata per consolidare i concetti fondamentali come puntatori, funzioni, gestione dei file e preparazione agli esami di laboratorio.  
+Per qualsiasi dubbio, puoi contattarmi su Telegram: [@Sbracato](https://t.me/Sbracato)
 
-La repository è organizzata in cartelle tematiche per una migliore navigazione:
+---
 
-*   **Allocazioni con file:** Esempi di allocazione dinamica della memoria e interazione con i file.
-*   **Funzioni con file:** Esempi di definizione, prototipazione e implementazione di funzioni, con gestione dei file.
-*   **Puntatori con file:** Esercizi sull'utilizzo dei puntatori, con esempi che coinvolgono operazioni su file.
-*   **Struct/Union/enum con file:** Implementazioni che mostrano l'uso di strutture, unioni ed enumerazioni, con esempi di lettura e scrittura da file.
-*   **Esercizi:** Una raccolta di esercizi di programmazione di base in C.
-*   **Esercizio_sui_file:** Un esercizio specifico sulla gestione di matrici e file, con calcolo della trasposta.
-*   **Struct\Enum\Union in c:** Ulteriori esempi sull'uso di strutture, unioni ed enumerazioni, con diverse tecniche di inizializzazione.
+## 📁 Struttura della Repository
 
-## Descrizione delle Cartelle
+La repository è organizzata in cartelle tematiche per una navigazione semplice e mirata:
 
-### Allocazioni con file
+### 🔧 Main Funzioni
 
-*   `allocazioni.c`: Codice sorgente con esempi di allocazione dinamica (malloc, calloc, realloc, free) e operazioni di lettura/scrittura su file.
-*   `README.md`: Descrizione degli esempi e istruzioni per la compilazione e l'esecuzione.
+Contiene esempi pratici di definizione, prototipazione e implementazione di funzioni in C, con particolare attenzione alla gestione dei file.
 
-### Funzioni con file
+- `definizioni.c`: Definizioni delle funzioni.
+- `prototipi.h`: Prototipi delle funzioni.
+- `funzioni.c`: Implementazione e utilizzo.
+- `README.md`: Istruzioni e spiegazioni.
 
-*   `definizioni.c`: Contiene le definizioni delle funzioni.
-*   `prototipi.h`: Contiene i prototipi delle funzioni.
-*   `funzioni.c`: Implementazione delle funzioni, con esempi di utilizzo e gestione dei file.
-*   `README.md`: Spiegazione delle funzioni implementate e come utilizzarle.
+---
 
-### Puntatori con file
+### 🧠 Puntatori
 
-*   `puntatori.c`: Esempi di utilizzo dei puntatori, con operazioni su file (es. lettura/scrittura di dati tramite puntatori).
-*   `README.md`: Descrizione degli esempi e del funzionamento dei puntatori.
+Esercizi sull'utilizzo dei puntatori, con esempi che coinvolgono operazioni su variabili e file.
 
-### Struct/Union/enum con file
+- `puntatori.c`: Esempi didattici sull'uso dei puntatori.
+- `README.md`: Spiegazione dei concetti trattati.
 
-*   `struct_enum_union.c`: Codice che mostra l'uso di struct, enum e union, con esempi di serializzazione su file.
-*   `README.md`: Spiegazione delle strutture dati e come vengono utilizzate con i file.
+---
 
-### Esercizi
+### 📝 Test a Risposta Multipla
 
-Questa cartella contiene diversi esercizi di programmazione di base in C:
+Contiene un esempio di test universitario con domande a risposta multipla e relativa soluzione.
 
-*   `Concatenazione_Stringhe.c`: Esempio di concatenazione di stringhe.
-*   `Inizio_fine_stringa.c`: Esercizi sull'individuazione dell'inizio e della fine di una stringa.
-*   `Media_Aritmetica.c`: Calcolo della media aritmetica.
-*   `Percentuale.c`: Calcolo di percentuali.
-*   `Rapporto.c`: Calcolo di rapporti.
-*   `Sequenza_Monotona.c`: Verifica se una sequenza è monotona (crescente o decrescente).
-*   `Stringa_contenuta.c`: Verifica se una stringa è contenuta in un'altra.
-*   `Trova_colonna_maggiore.c`: Trova la colonna con la somma maggiore in una matrice.
-*   `palindrome.c`: Verifica se una stringa è palindroma.
-*   `string_length_checker.c`: Verifica la lunghezza di una stringa.
-*   `README.md`: Descrizione degli esercizi.
+- `Test di programmazione 1 - [3 Febbraio 2023] [Canale A-E].pdf`: Test ufficiale.
+- `Test di programmazione 1 - [3 Febbraio 2023] [Canale A-E].ipynb`: Soluzione interattiva.
+- `README.md`: Spiegazione delle tecniche di risoluzione.
 
-### Esercizio\_sui\_file
+---
 
-*   `file_matrice_trasposta.c`: Esercizio che legge una matrice da file, ne calcola la trasposta e la salva su un altro file.
-*   `matrice.txt`: File di esempio contenente una matrice.
-*   `README.md`: Descrizione dell'esercizio e del formato del file `matrice.txt`.
+### 🎓 Soluzioni Esami Laboratorio
 
-### Struct\Enum\Union in c
+Soluzioni complete di prove d'esame di laboratorio in C, utili per esercitarsi e comprendere la struttura richiesta.
 
-*   `initializing_struct_with_function.c`: Esempio di inizializzazione di una struttura con una funzione.
-*   `initializing_struct_with_function2.0.c`: Variante dell'esempio precedente.
-*   `initializing_struct_with_function3.0.c`: Ulteriore variante.
-*   `initializing_struct_with_function4.0.c`: Un'altra variante ancora.
-### Esempio di test a risposta multipla con Soluzione.
-*   `README.md`: Spiegazione delle diverse tecniche di inizializzazione e dell'uso delle strutture.
-*    `Test di programmazione 1 - [3 Febbraio 2023] [Canale A-E].pdf` : pdf del test
-*    `Test di programmazione 1 - [3 Febbraio 2023] [Canale A-E].ipynb `: soluzione del test
+- `Soluzione esame 25/12/2023`: Codice sorgente e spiegazioni.
 
-### Soluzione_Esami_Laboratorio in c
-* `Soluzione esame 25/12/2023`
+---
 
-### Come Compilare
+## ▶️ Come Compilare
+
+Per compilare un file `.c` presente nella repository, usa il comando:
+
 ```bash
 gcc -o nome_eseguibile nome_file.c
+./nome_eseguibile
