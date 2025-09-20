@@ -28,8 +28,8 @@ int main(int argc, char* argv[]) {
     printf("Dopo modifica tramite ptr, il valore di y è: %d\n", y);
 
     // 4.1) Puntatore nullo (NULL)
-    // Un puntatore nullo è un puntatore che non punta a nessuna locazione di memoria valida.
-    // In altre parole, un puntatore nullo è un puntatore che contiene l'indirizzo speciale 'NULL'.Punta a niente che è stato inizializzato.
+    // Un puntatore nullo è un puntatore che contiene l'indirizzo speciale 'NULL'.
+    // Indica che il puntatore non punta a nessuna locazione di memoria valida.
     // È importante utilizzare i puntatori nulli per evitare errori di memoria e per indicare che un puntatore non è ancora stato inizializzato.
 
     int* ptrNull = NULL; // Puntatore nullo, non punta a nessuna variabile
