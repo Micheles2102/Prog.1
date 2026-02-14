@@ -1,20 +1,27 @@
-// File: prototipi.h
-// Questo file contiene tutti i prototipi delle funzioni
-
 #ifndef PROTOTIPI_H
 #define PROTOTIPI_H
 
-// Prototipo per la somma di due numeri interi
+// Costanti
+#define RIGHE 3
+#define COLONNE 4
+
+// Funzioni matematiche base
 int somma(int a, int b);
-
-// Prototipo per il prodotto di due numeri interi
 int prodotto(int a, int b);
-
-// Prototipo per calcolare l'area di un quadrato
 float area_quadrato(float lato);
-
-// Prototipo per calcolare l'area di un triangolo
 float area_triangolo(float base, float altezza);
+
+// Funzioni su interi e puntatori
+int somma_numerica(int a, int b);
+int somma_numerica_reference(int* a, int* b);
+void aggiungi_con_reference(int* x, int y);
+int aggiungi_senza_reference(int x, int y);
+
+// Funzioni su array e matrici
+void stampa_array(int* v, int t);
+void costruisci_array(int** v, int N);
+void costruisci_matrice(int N, int (*v)[N]);
+void costruisci_matrice_dimensioni_variabili1(int v[][COLONNE], int N, int M);
 
 #endif // PROTOTIPI_H
 
