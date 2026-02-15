@@ -11,8 +11,11 @@ Studiare la programmazione può essere impegnativo. Questa applicazione è stata
 *   **Apprendimento Visivo:** Interfaccia moderna con snippet di codice reale per familiarizzare con la sintassi.
 
 ## 📸 Anteprima
-![Domanda interattiva](../immagini/Foto_applicazione_2.png)
-![Dashboard statistiche](../immagini/Foto_applicazione_5.png)
+    ![Menu Quiz App](./Immagini/Foto_applicazione_1.png)
+    ![Menu Quiz App](./Immagini/Foto_applicazione_2.png)
+    ![Menu Quiz App](./Immagini/Foto_applicazione_3.png)
+    ![Menu Quiz App](./Immagini/Foto_applicazione_4.png)
+    ![Menu Quiz App](./Immagini/Foto_applicazione_5.png)
 
 ## 📚 Argomenti Trattati
 L'app copre i pilastri del corso:
