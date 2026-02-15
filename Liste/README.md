@@ -8,6 +8,22 @@ Una lista è composta da **nodi**. Ogni nodo contiene dati e un puntatore al pro
 
 ---
 
+## 🖼️ Struttura della Lista Collegata
+In una lista collegata, ogni **Nodo** è un oggetto separato in memoria.
+
+```mermaid
+graph LR
+    Head((TESTA)) --> Node1["Dato: 10 | Next"]
+    Node1 --> Node2["Dato: 20 | Next"]
+    Node2 --> Node3["Dato: 30 | Next"]
+    Node3 --> Null[NULL]
+    
+    style Head fill:#2980b9,color:#fff
+    style Null fill:#7f8c8d,color:#fff
+```
+
+---
+
 ## 🎨 Logica di Inserimento in Testa (`insert_at_head`)
 
 L'inserimento in testa avviene in tre fasi fondamentali per mantenere integra la catena dei puntatori:
@@ -22,7 +38,7 @@ graph LR
 ```
 
 ### 2. Collegamento (`new_node->next = head`)
-Il nuovo nodo punta alla vecchia testa. Ora ci sono due modi per raggiungere il primo elemento.
+Il nuovo nodo "aggancia" la vecchia testa. In questa fase, sia TESTA che NUOVO NODO->next puntano allo stesso elemento.
 ```mermaid
 graph LR
     Head((TESTA)) --> Node1["Nodo A"]
