@@ -38,5 +38,12 @@ Implementazione di una **Coda (Queue)** tramite lista collegata:
 
 ---
 
+## 🎨 Visualizzazione Interattiva
+Per comprendere meglio come si muovono i puntatori e come vengono allocati i nodi, ti consiglio di consultare **VisuAlgo**:
+*   [Visualizzazione Liste Collegate](https://visualgo.net/en/list)
+*   [Visualizzazione Code (Queue)](https://visualgo.net/en/list) (Seleziona la scheda *Queue*)
+
+---
+
 > [!IMPORTANT]
 > Ricorda sempre di usare la funzione `free()` per ogni nodo creato con `malloc()` quando la lista non serve più, per evitare **memory leaks**.
