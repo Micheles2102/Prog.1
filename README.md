@@ -2,10 +2,20 @@
 
 Repository dedicata allo studio del linguaggio C per l'esame di **Programmazione 1** presso l'Università di Catania (DMI). Qui troverai appunti, esempi di codice e soluzioni alle prove d'esame.
 
+## 🚀 Novità: C Programming Quiz App 🎮
+
+Abbiamo rilasciato una **nuova applicazione desktop** per esercitarsi sui concetti di Programmazione 1 in modo interattivo!
+
+*   **[Scarica il Quiz App ora!](./QuizApp)**: Include quiz su funzioni, puntatori, liste e temi d'esame.
+*   **Screenshot dell'applicazione:**
+    ![Menu Quiz App](./immagini/Foto_applicazione_1.png)
+    *Esempio dell'interfaccia principale.*
+
 ## 📂 Struttura della Repository
 
 Accedi rapidamente ai contenuti presenti nella repository tramite i link sottostanti:
 
+*   **[Quiz App Interattivo](./QuizApp)**: Applicazione desktop per Windows e Linux con quiz interattivi. 🆕
 *   **[Funzioni](./Funzioni)**: Definizione, prototipi e passaggio di parametri.
 *   **[Puntatori](./puntatori)**: Gestione della memoria, indirizzi e valori.
 *   **[Puntatori Dinamici](./puntatori_dinamici)**: Allocazione dinamica con `malloc`, `calloc` e `realloc`.
