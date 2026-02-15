@@ -16,34 +16,47 @@ Il termine della lista è indicato da un puntatore `NULL`.
 
 ---
 
+## 🎨 Diagrammi Comparativi
+
+### Struttura della Lista
+```mermaid
+graph LR
+    Head((TESTA)) --> Node1["Dato: 10 | Next"]
+    Node1 --> Node2["Dato: 20 | Next"]
+    Node2 --> Node3["Dato: 30 | Next"]
+    Node3 --> Null[NULL]
+    
+    style Head fill:#2980b9,color:#fff
+    style Null fill:#7f8c8d,color:#fff
+```
+
+### Logica di Inserimento (`insert_at_head`)
+```mermaid
+graph LR
+    Head((TESTA)) --> NewNode["NUOVO NODO"]
+    NewNode --> OldHead["VECCHIA TESTA"]
+    style Head fill:#2980b9,color:#fff
+    style NewNode fill:#27ae60,color:#fff
+```
+
+---
+
 ## 🛠️ Contenuto della cartella
 
 ### 1. [linked_list_basics.c](./linked_list_basics.c)
-Questo file mostra la logica di base:
-- Definizione della `struct Node`.
-- Uso della `malloc` per creare nodi nello HEAP.
-- Funzione per inserire elementi in testa.
+Logica di base: Definizione `struct Node`, `malloc` e inserimento in testa.
 
 ### 2. [library_management.c](./library_management.c)
-Un esempio pratico che simula un sistema di gestione per una biblioteca:
-- **Struttura**: Ogni nodo è un `Book` con titolo e autore.
-- **Aggiunta**: Inserisce nuovi libri nella collezione.
-- **Rimozione**: Cerca un libro per titolo, "sgancia" il nodo dalla lista e libera la memoria con `free`.
+Esempio pratico: Gestione di una biblioteca con inserimento e rimozione per titolo.
 
 ### 3. [queue.c](./queue.c)
-Implementazione di una **Coda (Queue)** tramite lista collegata:
-- Segue la logica **FIFO** (First-In, First-Out).
-- Funzioni di `enqueue` (aggiunta in coda) e `dequeue` (rimozione dalla testa).
-- Gestione dei puntatori `front` e `rear` per operazioni efficienti.
+Implementazione di una **Coda (Queue)** tramite lista collegata (logica FIFO).
 
 ---
 
-## 🎨 Visualizzazione Interattiva
-Per comprendere meglio come si muovono i puntatori e come vengono allocati i nodi, ti consiglio di consultare **VisuAlgo**:
-*   [Visualizzazione Liste Collegate](https://visualgo.net/en/list)
-*   [Visualizzazione Code (Queue)](https://visualgo.net/en/list) (Seleziona la scheda *Queue*)
-
----
+## 🌐 Altre Risorse
+*   [Visualizzazione Liste Collegate (VisuAlgo)](https://visualgo.net/en/list)
+*   [Visualizzazione Code (VisuAlgo)](https://visualgo.net/en/list)
 
 > [!IMPORTANT]
-> Ricorda sempre di usare la funzione `free()` per ogni nodo creato con `malloc()` quando la lista non serve più, per evitare **memory leaks**.
+> Ricorda sempre di usare la funzione `free()` per ogni nodo creato con `malloc()` quando la lista non serve più.
