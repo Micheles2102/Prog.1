@@ -4,37 +4,38 @@ Le liste collegate sono strutture dati dinamiche fondamentali per la gestione fl
 
 ## 📖 Cosa sono le Liste?
 
-Una lista è composta da **nodi**. Ogni nodo contiene:
-1.  **Dati**: L'informazione utile (es. un intero, una stringa o una struct).
-2.  **Puntatore al prossimo**: L'indirizzo di memoria del nodo successivo.
-
-Il termine della lista è indicato da un puntatore `NULL`.
-
-### 🚀 Vantaggi
-- **Dinamicità**: Non devi dichiarare la dimensione massima all'inizio.
-- **Inserimento/Rimozione**: Molto efficienti (O(1)) se si opera in testa.
+Una lista è composta da **nodi**. Ogni nodo contiene dati e un puntatore al prossimo nodo. Il termine della lista è indicato da `NULL`.
 
 ---
 
-## 🎨 Diagrammi Comparativi
+## 🎨 Logica di Inserimento in Testa (`insert_at_head`)
 
-### Struttura della Lista
+L'inserimento in testa avviene in tre fasi fondamentali per mantenere integra la catena dei puntatori:
+
+### 1. Stato Iniziale
+Abbiamo la lista attuale e un nuovo nodo creato con `malloc`.
 ```mermaid
 graph LR
-    Head((TESTA)) --> Node1["Dato: 10 | Next"]
-    Node1 --> Node2["Dato: 20 | Next"]
-    Node2 --> Node3["Dato: 30 | Next"]
-    Node3 --> Null[NULL]
-    
-    style Head fill:#2980b9,color:#fff
-    style Null fill:#7f8c8d,color:#fff
+    Head((TESTA)) --> Node1["Nodo A"] --> Node2["..."]
+    NewNode["NUOVO NODO"]
+    style NewNode fill:#27ae60,color:#fff
 ```
 
-### Logica di Inserimento (`insert_at_head`)
+### 2. Collegamento (`new_node->next = head`)
+Il nuovo nodo punta alla vecchia testa. Ora ci sono due modi per raggiungere il primo elemento.
+```mermaid
+graph LR
+    Head((TESTA)) --> Node1["Nodo A"]
+    NewNode["NUOVO NODO"] -- "next" --> Node1
+    style NewNode fill:#27ae60,color:#fff
+```
+
+### 3. Aggiornamento Testa (`head = new_node`)
+Spostiamo la testa sul nuovo nodo. L'inserimento è concluso.
 ```mermaid
 graph LR
     Head((TESTA)) --> NewNode["NUOVO NODO"]
-    NewNode --> OldHead["VECCHIA TESTA"]
+    NewNode -- "next" --> Node1["Nodo A"]
     style Head fill:#2980b9,color:#fff
     style NewNode fill:#27ae60,color:#fff
 ```
