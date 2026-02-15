@@ -1,65 +1,54 @@
-# 📘 Raccolta di Esercizi e Concetti Fondamentali in C
+# C Programming Quiz GUI App
 
-Questa repository contiene una selezione di esercizi e implementazioni in linguaggio C, pensata per consolidare i concetti fondamentali come puntatori, funzioni, gestione della memoria e preparazione agli esami di laboratorio.  
-Per qualsiasi dubbio, puoi contattarmi su Telegram: [@Sbracato](https://t.me/Sbracato)
+Una moderna applicazione desktop per testare le tue conoscenze su Funzioni e Puntatori in C, basata sugli argomenti ufficiali di Programmazione 1.
 
----
+## 🚀 Come avviare l'applicazione
 
-## 📁 Struttura della Repository
+L'app è disponibile come file eseguibile per Windows, quindi non serve installare Python per usarla:
 
-La repository è organizzata in cartelle tematiche per una navigazione semplice e mirata:
+1. Vai nella cartella `dist`.
+2. Fai doppio clic su `C_Quiz_App.exe`.
+3. Il quiz si aprirà in una finestra dedicata con interfaccia grafica moderna.
 
-### 🔧 [Funzioni](Funzioni/)
+## 🛠️ Sviluppo e Modifiche (Ambiente UV)
 
-Contiene esempi pratici di definizione, prototipazione e implementazione di funzioni in C, con un'architettura modulare e pulita.
+Se desideri modificare il codice, il progetto è gestito con `uv`:
 
-- `definizioni.c`: Implementazione di tutte le funzioni.
-- `prototipi.h`: Dichiarazione dei prototipi e costanti di progetto.
-- `funzioni.c`: Punto di ingresso (`main`) con test delle funzionalità.
-- `README.md`: Guida dettagliata all'uso delle funzioni con esempi visivi.
+1. Assicurati di avere `uv` installato.
+2. Sincronizza l'ambiente:
+   ```bash
+   uv sync
+   ```
+3. Avvia l'app in modalità sviluppo:
+   ```bash
+   uv run python app.py
+   ```
 
----
+## 🏗️ Generazione dell'Eseguibile
 
-### 🧠 [Puntatori](puntatori/)
-
-Una guida completa all'uso dei puntatori, dal passaggio per valore/riferimento alla gestione di array e matrici dinamiche.
-
-- `01_functions_value.c`: Differenza tra parametri formali e attuali (passaggio per valore).
-- `02_pointers_reference.c`: Uso dei puntatori per modificare variabili (passaggio per riferimento).
-- `03_arrays.c`: Relazione tra array e memoria.
-- `04_matrices.c`: Gestione di matrici e l'uso dei Variable Length Arrays (VLA).
-- `05_advanced_pointers.c`: Puntatori a puntatori e uso di `const`.
-- `README.md`: Spiegazione teorica e diagrammi Mermaid sul funzionamento della memoria.
-
----
-
-### 📝 Test a Risposta Multipla
-
-Contiene esempi di test universitari con domande a risposta multipla e relative soluzioni interattive.
-
-- `Test di programmazione 1 - [3 Febbraio 2023] [Canale A-E].pdf`: Test ufficiale.
-- `Test di programmazione 1 - [3 Febbraio 2023] [Canale A-E].ipynb`: Soluzione interattiva commentata.
-
----
-
-### 🎓 Soluzioni Esami Laboratorio
-
-Soluzioni complete di prove d'esame di laboratorio in C, utili per comprendere la struttura richiesta in fase d'esame.
-
----
-
-## ▶️ Come Compilare
-
-Per compilare i progetti modulari (come nella cartella Funzioni):
-
-```bash
-gcc funzioni.c definizioni.c -o programma
-./programma
+Se modifichi il codice e vuoi rigenerare l'app:
+```powershell
+.\build_exe.ps1
 ```
 
-Per i singoli file nella cartella Puntatori:
+## 📊 Algoritmi di Ordinamento (Sorting)
+Oltre al quiz, la repository include ora una sezione dedicata agli algoritmi di ordinamento richiesti per l'esame:
 
-```bash
-gcc nome_file.c -o output
-./output
-```
+1.  **[Guida Completa ai Sorting](SORTING_GUIDE.md)**: Una spiegazione dettagliata della logica e della complessità di ogni algoritmo.
+2.  **Codice Sorgente in C**:
+    *   [bubble_insertion_sort.c](bubble_insertion_sort.c): Implementazione di Bubble Sort e Insertion Sort.
+    *   [selection_sort.c](selection_sort.c): Implementazione di Selection Sort.
+    *   [merge_sort.c](merge_sort.c): Implementazione di Merge Sort (O(n log n)).
+
+## 📚 Argomenti Trattati
+Il quiz copre i 10 punti fondamentali della repository:
+1. Cos'è una funzione
+2. Struttura e definizione
+3. Invocazione
+4. Prototipi
+5. Parametri Formali vs Attuali
+6. Passaggio per valore/indirizzo
+7. Allocazione dinamica/automatica
+8. Passaggio di Array
+9. Array Multidimensionali
+10. Accesso a indirizzi e valori
