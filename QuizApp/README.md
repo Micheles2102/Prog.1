@@ -36,4 +36,3 @@ Trovi gli eseguibili pronti all'uso in questa cartella:
 3. Avvialo da terminale: `./C_Quiz_App_Linux`.
 
 ---
-*Creato con ❤️ per gli studenti del DMI - Università di Catania.*
