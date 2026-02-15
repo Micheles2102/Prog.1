@@ -13,4 +13,3 @@ Accedi rapidamente ai contenuti presenti nella repository tramite i link sottost
 *   **[Algoritmi](./Algorithms)**: Logica di base e algoritmi di ordinamento/ricerca.
 *   **[Argomenti del Main](./Argomenti_Del_Main)**: Gestione di `argc` e `argv`.
 *   **[Soluzione Esami Laboratorio](./Soluzione_Esami_Laboratorio)**: Esercitazioni e tracce d'esame risolte.
-*   **[Test Risposta Multipla](./Test_Risposta_Multipla.c)**: Quiz e test a risposta multipla sul linguaggio C.
