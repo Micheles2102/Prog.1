@@ -8,8 +8,13 @@ Abbiamo rilasciato una **nuova applicazione desktop** per esercitarsi sui concet
 
 *   **[Scarica il Quiz App ora!](./QuizApp)**: Include quiz su funzioni, puntatori, liste e temi d'esame.
 *   **Screenshot dell'applicazione:**
-    ![Menu Quiz App](./immagini/Foto_applicazione_1.png)
-    *Esempio dell'interfaccia principale.*
+    
+    ![Menu Quiz App](./Immagini/Foto_applicazione_1.png)
+    ![Menu Quiz App](./Immagini/Foto_applicazione_2.png)
+    ![Menu Quiz App](./Immagini/Foto_applicazione_3.png)
+    ![Menu Quiz App](./Immagini/Foto_applicazione_4.png)
+    ![Menu Quiz App](./Immagini/Foto_applicazione_5.png)
+    *Esempi dell'interfaccia principale.*
 
 ## 📂 Struttura della Repository
 
