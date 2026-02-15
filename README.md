@@ -1,54 +1,26 @@
-# C Programming Quiz GUI App
+# Programmazione 1 - UNICT 🎓
 
-Una moderna applicazione desktop per testare le tue conoscenze su Funzioni e Puntatori in C, basata sugli argomenti ufficiali di Programmazione 1.
+Repository dedicata allo studio del linguaggio C per l'esame di **Programmazione 1** presso l'Università di Catania (DMI). Qui troverai appunti, esempi di codice, diagrammi e soluzioni alle prove d'esame.
 
-## 🚀 Come avviare l'applicazione
+## 📂 Struttura della Repository
 
-L'app è disponibile come file eseguibile per Windows, quindi non serve installare Python per usarla:
+Accedi rapidamente ai contenuti principali tramite i link sottostanti:
 
-1. Vai nella cartella `dist`.
-2. Fai doppio clic su `C_Quiz_App.exe`.
-3. Il quiz si aprirà in una finestra dedicata con interfaccia grafica moderna.
+*   **[Sintassi e Base](./Sintassi_Base)**: Concetti fondamentali del linguaggio C.
+*   **[Funzioni](./Funzioni)**: Definizione, prototipi e passaggio di parametri.
+*   **[Puntatori](./puntatori)**: Gestione della memoria, indirizzi e valori.
+*   **[Puntatori Dinamici](./puntatori_dinamici)**: Allocazione dinamica con `malloc`, `calloc` e `realloc`.
+*   **[Algoritmi](./Algorithms)**: Logica di base e algoritmi di ordinamento/ricerca.
+*   **[Argomenti del Main](./Argomenti_Del_Main)**: Gestione di `argc` e `argv`.
+*   **[Diagrammi](./Diagrammi)**: Rappresentazioni visuali per comprendere meglio la memoria e i flussi.
+*   **[Soluzione Esami Laboratorio](./Soluzione_Esami_Laboratorio)**: Esercitazioni e tracce d'esame risolte.
 
-## 🛠️ Sviluppo e Modifiche (Ambiente UV)
+---
 
-Se desideri modificare il codice, il progetto è gestito con `uv`:
+### 🛠️ Strumenti Utili
+All'interno della repository sono presenti anche script e moduli specifici per facilitare lo studio:
+*   **[Esempi Utili](./Esempi_Utili)**: Snippet di codice pronti all'uso.
+*   **[Moduli Specifici](./Moduli_Specifici)**: Funzioni riutilizzabili per compiti particolari.
 
-1. Assicurati di avere `uv` installato.
-2. Sincronizza l'ambiente:
-   ```bash
-   uv sync
-   ```
-3. Avvia l'app in modalità sviluppo:
-   ```bash
-   uv run python app.py
-   ```
-
-## 🏗️ Generazione dell'Eseguibile
-
-Se modifichi il codice e vuoi rigenerare l'app:
-```powershell
-.\build_exe.ps1
-```
-
-## 📊 Algoritmi di Ordinamento (Sorting)
-Oltre al quiz, la repository include ora una sezione dedicata agli algoritmi di ordinamento richiesti per l'esame:
-
-1.  **[Guida Completa ai Sorting](SORTING_GUIDE.md)**: Una spiegazione dettagliata della logica e della complessità di ogni algoritmo.
-2.  **Codice Sorgente in C**:
-    *   [bubble_insertion_sort.c](bubble_insertion_sort.c): Implementazione di Bubble Sort e Insertion Sort.
-    *   [selection_sort.c](selection_sort.c): Implementazione di Selection Sort.
-    *   [merge_sort.c](merge_sort.c): Implementazione di Merge Sort (O(n log n)).
-
-## 📚 Argomenti Trattati
-Il quiz copre i 10 punti fondamentali della repository:
-1. Cos'è una funzione
-2. Struttura e definizione
-3. Invocazione
-4. Prototipi
-5. Parametri Formali vs Attuali
-6. Passaggio per valore/indirizzo
-7. Allocazione dinamica/automatica
-8. Passaggio di Array
-9. Array Multidimensionali
-10. Accesso a indirizzi e valori
+---
+*Creato con ❤️ per supportare gli studenti del DMI.*
