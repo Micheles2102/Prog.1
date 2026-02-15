@@ -29,7 +29,12 @@ Un esempio pratico che simula un sistema di gestione per una biblioteca:
 - **Struttura**: Ogni nodo è un `Book` con titolo e autore.
 - **Aggiunta**: Inserisce nuovi libri nella collezione.
 - **Rimozione**: Cerca un libro per titolo, "sgancia" il nodo dalla lista e libera la memoria con `free`.
-- **Display**: Scorre l'intera lista per stampare i libri presenti.
+
+### 3. [queue.c](./queue.c)
+Implementazione di una **Coda (Queue)** tramite lista collegata:
+- Segue la logica **FIFO** (First-In, First-Out).
+- Funzioni di `enqueue` (aggiunta in coda) e `dequeue` (rimozione dalla testa).
+- Gestione dei puntatori `front` e `rear` per operazioni efficienti.
 
 ---
 
