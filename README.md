@@ -4,9 +4,9 @@ Repository dedicata allo studio del linguaggio C per l'esame di **Programmazione
 
 ## 🚀 Novità: C Programming Quiz App 🎮
 
-Abbiamo rilasciato una **nuova applicazione desktop** per esercitarsi sui concetti di Programmazione 1 in modo interattivo!
+Ho rilasciato una **nuova applicazione desktop** per esercitarsi sui concetti di Programmazione 1 in modo interattivo.
 
-*   **[Scarica il Quiz App ora!](./QuizApp)**: Include quiz su funzioni, puntatori, liste e temi d'esame.
+*   **[Scarica il Quiz App da qui](./QuizApp)**: Include quiz su funzioni, puntatori, liste e temi d'esame.
 *   **Screenshot dell'applicazione:**
     
     ![Menu Quiz App](./Immagini/Foto_applicazione_1.png)
